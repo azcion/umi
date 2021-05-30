@@ -17,6 +17,12 @@ jobs:
                   rm -rf src
                   mv dist/* .
                   rm -rf dist
+                  rm -rf .github/workflows
+                  rm -rf .gitattributes
+                  rm -rf .gitignore
+                  rm -rf gulpfile.js
+                  rm -rf package-lock.json
+                  rm -rf package.json
 
             - name: Publish current workdir to GitHub Pages
               uses: rayluo/github-pages-overwriter@v1.1
