@@ -1,0 +1,16 @@
+name: Push to pages
+
+on:
+    push:
+        branches:
+            - 'main'
+
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out
+              uses: actions/checkout@v2
+
+            - name: Publish current workdir to GitHub Pages
+              uses: rayluo/github-pages-overwriter@v1.1
