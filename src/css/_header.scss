@@ -1,0 +1,24 @@
+@media screen /* large screen */ and (min-width: $mobile) {
+	#tagline {
+		font-size: 5rem;
+		letter-spacing: -6px;
+		margin-top: 0;
+	}
+}
+
+@media screen /* small screen */ and (max-width: $mobile - 1) {
+	#tagline {
+		font-size: 3rem;
+		letter-spacing: -3px;
+	}
+}
+
+#tagline {
+	color: $tagline-color;
+	font-weight: 800;
+}
+
+#top {
+	margin: auto;
+	text-align: center;
+}

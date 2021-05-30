@@ -1,0 +1,53 @@
+nav {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	p {
+		font-family: $nav-font;
+		display: inline-block;
+		border-bottom-color: $nav-color;
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: $nav-color;
+			border-bottom: 1px solid $nav-color;
+		}
+
+		a[class*='nav-here'] {
+			color: $nav-color-here;
+			border-bottom: 1px solid $nav-color-here;
+		}
+	}
+}
+
+@media screen and (min-width: $mobile) {
+	nav {
+		justify-content: space-around;
+		flex-wrap: nowrap;
+
+		p {
+			min-width: 110px;
+			margin-top: 12px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile - 1) {
+	nav p {
+		min-width: 110px;
+		margin: 5px 10px;
+		text-align: center !important;
+	}
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}

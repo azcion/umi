@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+	include ../partials/head.pug
+	body
+		// <wrapper> 
+		div.wrapper
+			// <header>
+			include ../partials/header.pug
+			// </header>
+			// <content> 
+			main
+				block content
+			// </content> 
+			br
+			footer
+				small &copy;&nbsp;#{new Date().getFullYear()}&nbsp;·&nbsp;Zak&nbsp;Klajderic
+		// </wrapper> 

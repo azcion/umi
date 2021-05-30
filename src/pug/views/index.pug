@@ -1,0 +1,21 @@
+extends ./layouts/default.pug
+
+block vars
+	- pageTitle = ''
+	- navLocation = 'index'
+
+block tagline
+	h1#tagline サンプルギャラリー
+
+block content
+	div.container
+		div.grid
+			- for (let i = 0; i < 4; ++i)
+				div.item.g-one
+					canvas.umi(class='umi-one' width='200' height='200')
+			div.item.g-wide
+				canvas.umi(class='umi-wide' width='400' height='200')
+			div.item.g-tall
+				canvas.umi(class='umi-tall' width='200' height='400')
+			div.item.g-two
+				canvas.umi(class='umi-two' width='400' height='400')

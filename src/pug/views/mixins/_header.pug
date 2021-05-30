@@ -1,0 +1,19 @@
+- const root = '/'
+
+mixin logo(platform)
+	a(class=`logo-container ${platform}` href=root)
+		custom-svg.logo(class=platform src='img/logo.svg')
+
+mixin pal(text, file)
+	p.text-left
+		a(
+			href=root+file
+			class= navLocation == file ? 'nav-here' : ''
+		) #{text}
+
+mixin par(text, file, link)
+	p.text-right
+		a(
+			href=link || root+file
+			class= navLocation == file ? 'nav-here' : ''
+		) #{text}
