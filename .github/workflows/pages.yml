@@ -12,5 +12,12 @@ jobs:
             - name: Check out
               uses: actions/checkout@v2
 
+            - name: Restructure
+              run: |
+                  rm -rf src
+                  mv dist/* .
+                  rm -rf dist
+                  done
+
             - name: Publish current workdir to GitHub Pages
               uses: rayluo/github-pages-overwriter@v1.1
