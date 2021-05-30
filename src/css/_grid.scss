@@ -7,19 +7,19 @@
 	}
 
 	.g-two {
-		grid-area: g-two;
+		grid-area: two;
 	}
 
 	.g-wide {
-		grid-area: g-wide;
+		grid-area: wide;
 	}
 
 	.g-tall {
-		grid-area: g-tall;
+		grid-area: tall;
 	}
 }
 
-@media screen /* large screen */ and (min-width: $tablet) {
+@media screen /* wide screen */ and (min-width: $tablet) {
 	.container {
 		width: 100vw;
 		position: relative;
@@ -32,9 +32,9 @@
 	.grid {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-			'g-tall g-two g-two . .'
-			'g-tall g-two g-two . .'
-			'g-wide g-wide . . .';
+			'tall two two . .'
+			'tall two two . .'
+			'wide wide . . .';
 	}
 }
 
@@ -42,9 +42,9 @@
 	.grid {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
-			'g-tall g-two g-two'
-			'g-tall g-two g-two'
-			'g-wide g-wide .';
+			'tall two two'
+			'tall two two'
+			'wide wide .';
 	}
 }
 
@@ -52,10 +52,10 @@
 	.grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
-			'g-two g-two'
-			'g-two g-two'
-			'g-tall .'
-			'g-tall .'
-			'g-wide g-wide';
+			'two two'
+			'two two'
+			'tall .'
+			'tall .'
+			'wide wide';
 	}
 }
