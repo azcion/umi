@@ -5,12 +5,14 @@ block vars
 	- navLocation = 'index'
 
 block tagline
-	h1#tagline サンプルギャラリー
+	h1#tagline
+		span サンプル
+		span ギャラリー
 
 block content
-	div.container
-		div.grid
-			- for (let i = 0; i < 4; ++i)
+	div.full-width
+		div.grid.islands
+			- for (let i = 0; i < 2; ++i)
 				div.item.g-one
 					canvas.umi(class='umi-one' width='200' height='200')
 			div.item.g-wide
@@ -19,3 +21,28 @@ block content
 				canvas.umi(class='umi-tall' width='200' height='400')
 			div.item.g-two
 				canvas.umi(class='umi-two' width='400' height='400')
+			div.item.g-no-1
+			div.item.g-no-2
+		div.divider.islands.to-desert
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.desert
+			div.grid.desert
+				div.item.g-one0
+					canvas.umi(class='umi-one' width='400' height='400')
+				div.item.g-one0
+					canvas.umi(class='umi-one' width='400' height='400')
+		div.divider.desert.to-forest
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.forest
+			div.item.g-one
+				canvas.umi(class='umi-one' width='400' height='400')
+		div.divider.forest.to-arctic
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.arctic
+			div.item.g-one
+				canvas.umi(class='umi-one' width='400' height='400')
+		div.divider.arctic.to-next
+			custom-svg(class=platform src='img/curve.svg')

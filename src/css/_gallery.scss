@@ -1,0 +1,58 @@
+$islands-bg: #0a52ad;
+$desert-bg: #f1c673;
+$forest-bg: #3b5d0d;
+$arctic-bg: #1b3983;
+$next-bg: $islands-bg;
+
+.full-width {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+.islands,
+.islands svg {
+	background-color: $islands-bg;
+}
+
+.desert,
+.desert svg {
+	background-color: $desert-bg;
+}
+
+.forest,
+.forest svg {
+	background-color: $forest-bg;
+}
+
+.arctic,
+.arctic svg {
+	background-color: $arctic-bg;
+}
+
+.divider {
+	svg {
+		margin-bottom: -5px;
+	}
+
+	&.to-desert svg {
+		fill: $desert-bg;
+	}
+
+	&.to-forest svg {
+		fill: $forest-bg;
+		transform: rotateY(180deg);
+	}
+
+	&.to-arctic svg {
+		fill: $arctic-bg;
+	}
+
+	&.to-next svg {
+		fill: $next-bg;
+		transform: rotateY(180deg);
+	}
+}

@@ -2,31 +2,140 @@
 
 window.onload = paintCanvases;
 
+const Paint = class {
+	constructor(fractionalSize) {
+		this.frac = fractionalSize;
+		this.umis = [];
+	}
+
+	makeUmiImgs(selector, options, config) {
+		[...document.querySelectorAll(selector)].forEach(e => {
+			const gl = e.getContext('webgl');
+			gl.canvas.width = (gl.canvas.width / 200) * this.frac;
+			gl.canvas.height = (gl.canvas.height / 200) * this.frac;
+
+			const umi = new Umi(gl, options);
+			umi.configureShader(config);
+			umi.draw();
+			const data = umi.gl.canvas.toDataURL();
+			const img = document.createElement('img');
+			img.src = data;
+			const parent = e.parentNode;
+			parent.replaceChildren(img);
+		});
+	}
+
+	makeUmis(selector, options, config) {
+		[...document.querySelectorAll(selector)].forEach(e => {
+			const gl = e.getContext('webgl');
+			gl.canvas.width = (gl.canvas.width / 200) * this.frac;
+			gl.canvas.height = (gl.canvas.height / 200) * this.frac;
+
+			const umi = new Umi(gl, options);
+			umi.configureShader(config);
+			umi.draw();
+			this.umis.push(umi);
+		});
+	}
+
+	draw() {
+		for (const umi of this.umis) {
+			umi.draw();
+		}
+	}
+};
+
 async function paintCanvases() {
 	await Umi.loadShaders('glsl/');
-	const umis = [];
 
-	let options = null;
+	const grid = document.querySelector('.grid');
+	const style = getComputedStyle(grid);
+	const nColumns = style['grid-template-columns'].split(' ').length;
+	const width = parseInt(style.width.slice(0, -2));
+	const gridHeight = parseInt(style.height.slice(0, -2));
+	const frac = width / nColumns;
+	const p = new Paint(frac);
 
-	umis.push(...makeUmis('one', options));
-	umis.push(...makeUmis('wide', options));
-	umis.push(...makeUmis('tall', options));
-	umis.push(...makeUmis('two', options));
+	console.log(gridHeight);
 
-	for (const umi of umis) {
-		umi.draw();
-	}
+	let options = {};
+	let config = {};
+	p.makeUmiImgs('.islands .umi-one', options, config);
+	p.makeUmiImgs('.islands .umi-two', options, config);
+	p.makeUmiImgs('.islands .umi-wide', options, config);
+	p.makeUmiImgs('.islands .umi-tall', options, config);
+
+	options = {
+		overrideSize: true
+	};
+	config = {
+		attributes: {
+			height: gridHeight / 2,
+			mass: 500,
+			octaves: 5,
+			frequency: 0.0025
+		},
+		gradients: {
+			colors: hexArrayToColors([
+				'#F1C673',
+				'#EAAC4A',
+				'#2B601D',
+				'#F8DDA0',
+				'#A6D5D3'
+			]),
+			positions: [0, 0.6, 0.8, 0.85, 0.88]
+		}
+	};
+	p.makeUmiImgs('.desert .umi-one', options, config);
+
+	config = {
+		attributes: {
+			height: gridHeight,
+			square: false,
+			water: 0.4
+		},
+		gradients: {
+			colors: hexArrayToColors([
+				'#3B5D0D',
+				'#13280A',
+				'#8B754B',
+				'#C8CBCC',
+				'#FFFFFF'
+			]),
+			positions: [0, 0.6, 0.8, 0.85, 0.99]
+		}
+	};
+	p.makeUmiImgs('.forest .umi-one', options, config);
+
+	config = {
+		attributes: {
+			mass: 300,
+			frequency: 0.0025
+		},
+		gradients: {
+			colors: hexArrayToColors([
+				'#1B3983',
+				'#264EB8',
+				'#72C8FB',
+				'#CCFDFF',
+				'#EBFAFE',
+				'#DDFFFF'
+			]),
+			positions: [0, 0.01, 0.1, 0.2, 0.5, 0.99]
+		}
+	};
+	p.makeUmiImgs('.arctic .umi-one', options, config);
 }
 
-function makeUmis(suffix, options) {
-	const name = `umi-${suffix}`;
-	const umis = [];
-
-	[...document.getElementsByClassName(name)].forEach(e => {
-		const umi = new Umi(e.getContext('webgl'));
-		umi.configureShader(options);
-		umis.push(umi);
+function hexArrayToColors(arr) {
+	arr = arr.map(hex => {
+		const c = hex.replace('#', '0x');
+		return [
+			((c >> 16) & 255) / 255,
+			((c >> 8) & 255) / 255,
+			(c & 255) / 255
+		].map(c => Math.round(c * 100) / 100);
 	});
 
-	return umis;
+	return arr;
 }

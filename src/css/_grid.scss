@@ -6,6 +6,26 @@
 		justify-self: center;
 	}
 
+	.g-wide0 {
+		grid-area: auto / auto / span 1 / span 2;
+	}
+
+	.g-tall0 {
+		grid-area: auto / auto / span 2 / span 1;
+	}
+
+	.g-two0 {
+		grid-area: auto / auto / span 2 / span 2;
+	}
+
+	.g-no-1 {
+		grid-area: no-1;
+	}
+
+	.g-no-2 {
+		grid-area: no-2;
+	}
+
 	.g-two {
 		grid-area: two;
 	}
@@ -20,42 +40,43 @@
 }
 
 @media screen /* wide screen */ and (min-width: $tablet) {
-	.container {
-		width: 100vw;
-		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -50vw;
-		margin-right: -50vw;
-	}
-
-	.grid {
+	.grid.islands {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-			'tall two two . .'
-			'tall two two . .'
-			'wide wide . . .';
+			'no-1 two two . no-2'
+			'. two two . tall'
+			'. . wide wide tall';
 	}
 }
 
 @media screen /* large screen */ and (min-width: $mobile) and (max-width: $tablet - 1) {
-	.grid {
+	.grid.islands {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
 			'tall two two'
 			'tall two two'
-			'wide wide .';
+			'wide wide .'
+			'no-1 . no-2';
 	}
 }
 
 @media screen /* small screen */ and (max-width: $mobile - 1) {
-	.grid {
+	.grid.islands {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas:
 			'two two'
 			'two two'
 			'tall .'
 			'tall .'
-			'wide wide';
+			'wide wide'
+			'no-1 no-2';
 	}
+}
+
+.grid.desert {
+	grid-template-columns: 1fr;
+}
+
+.grid.forest {
+	grid-template-columns: 1fr;
 }
