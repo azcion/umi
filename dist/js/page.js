@@ -41,6 +41,7 @@ async function paintCanvases() {
 	let config = {};
 	let alt = 'おそらく島の写真';
 	p.makeUmiImgs('.islands .umi', options, config, alt);
+	await new Promise(r => setTimeout(r, 250));
 
 	options = {
 		overrideSize: true
