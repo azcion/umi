@@ -48,9 +48,12 @@ $next-bg: $islands-bg;
 		height: 25%;
 	}
 
-	&.to-desert svg {
-		border-bottom: 2px solid $desert-bg;
-		fill: $desert-bg;
+	&.to-desert {
+		border-bottom: 2px solid white;
+
+		svg {
+			fill: $desert-bg;
+		}
 	}
 
 	&.to-forest svg {
