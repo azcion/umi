@@ -34,8 +34,8 @@ $next-bg: $islands-bg;
 }
 
 .divider {
-	svg {
-		margin-bottom: -0.65em;
+	custom-svg {
+		display: flex;
 	}
 
 	&.to-desert svg {
