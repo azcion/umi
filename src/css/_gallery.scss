@@ -35,9 +35,17 @@ $next-bg: $islands-bg;
 
 .divider {
 	custom-svg {
-		display: flex;
-		height: 5em;
-		align-items: flex-end;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	svg {
+		position: relative;
+		display: block;
+		width: calc(100% + 1.3px);
+		height: 25%;
 	}
 
 	&.to-desert svg {
