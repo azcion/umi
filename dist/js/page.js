@@ -7,7 +7,7 @@ const Paint = class {
 		this.frac = fractionalSize;
 	}
 
-	makeUmiImgs(selector, options, config) {
+	makeUmiImgs(selector, options, config, alt) {
 		[...document.querySelectorAll(selector)].forEach(e => {
 			const gl = e.getContext('webgl');
 			gl.canvas.width = (gl.canvas.width / 200) * this.frac;
@@ -18,6 +18,7 @@ const Paint = class {
 			umi.draw();
 			const data = umi.gl.canvas.toDataURL();
 			const img = document.createElement('img');
+			img.alt = alt;
 			img.src = data;
 			const parent = e.parentNode;
 			parent.replaceChildren(img);
@@ -38,10 +39,11 @@ async function paintCanvases() {
 
 	let options = {};
 	let config = {};
-	p.makeUmiImgs('.islands .umi-one', options, config);
-	p.makeUmiImgs('.islands .umi-two', options, config);
-	p.makeUmiImgs('.islands .umi-wide', options, config);
-	p.makeUmiImgs('.islands .umi-tall', options, config);
+	let alt = 'おそらく島の写真';
+	p.makeUmiImgs('.islands .umi-one', options, config, alt);
+	p.makeUmiImgs('.islands .umi-two', options, config, alt);
+	p.makeUmiImgs('.islands .umi-wide', options, config, alt);
+	p.makeUmiImgs('.islands .umi-tall', options, config, alt);
 
 	options = {
 		overrideSize: true
@@ -64,7 +66,8 @@ async function paintCanvases() {
 			positions: [0, 0.6, 0.8, 0.85, 0.88]
 		}
 	};
-	p.makeUmiImgs('.desert .umi-one', options, config);
+	alt = 'おそらく砂漠のオアシスの写真';
+	p.makeUmiImgs('.desert .umi-one', options, config, alt);
 
 	config = {
 		attributes: {
@@ -83,7 +86,8 @@ async function paintCanvases() {
 			positions: [0, 0.6, 0.8, 0.85, 0.99]
 		}
 	};
-	p.makeUmiImgs('.forest .umi-one', options, config);
+	alt = 'おそらく山岳林の写真';
+	p.makeUmiImgs('.forest .umi-one', options, config, alt);
 
 	config = {
 		attributes: {
@@ -102,7 +106,8 @@ async function paintCanvases() {
 			positions: [0, 0.01, 0.1, 0.2, 0.5, 0.99]
 		}
 	};
-	p.makeUmiImgs('.arctic .umi-one', options, config);
+	alt = 'おそらく氷山の写真';
+	p.makeUmiImgs('.arctic .umi-one', options, config, alt);
 }
 
 function hexArrayToColors(arr) {
