@@ -5,7 +5,6 @@ window.onload = paintCanvases;
 const Paint = class {
 	constructor(fractionalSize) {
 		this.frac = fractionalSize;
-		this.umis = [];
 	}
 
 	makeUmiImgs(selector, options, config) {
@@ -24,25 +23,6 @@ const Paint = class {
 			parent.replaceChildren(img);
 		});
 	}
-
-	makeUmis(selector, options, config) {
-		[...document.querySelectorAll(selector)].forEach(e => {
-			const gl = e.getContext('webgl');
-			gl.canvas.width = (gl.canvas.width / 200) * this.frac;
-			gl.canvas.height = (gl.canvas.height / 200) * this.frac;
-
-			const umi = new Umi(gl, options);
-			umi.configureShader(config);
-			umi.draw();
-			this.umis.push(umi);
-		});
-	}
-
-	draw() {
-		for (const umi of this.umis) {
-			umi.draw();
-		}
-	}
 };
 
 async function paintCanvases() {
@@ -55,8 +35,6 @@ async function paintCanvases() {
 	const gridHeight = parseInt(style.height.slice(0, -2));
 	const frac = width / nColumns;
 	const p = new Paint(frac);
-
-	console.log(gridHeight);
 
 	let options = {};
 	let config = {};
