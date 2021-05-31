@@ -1,5 +1,6 @@
 @media screen /* large screen */ and (min-width: $mobile) {
-	#tagline {
+	#tagline,
+	.large-and-bold {
 		font-size: 5rem;
 		letter-spacing: -6px;
 		margin-top: 0;
@@ -7,18 +8,20 @@
 }
 
 @media screen /* small screen */ and (max-width: $mobile - 1) {
-	#tagline {
+	#tagline,
+	.large-and-bold {
 		font-size: 3rem;
 		letter-spacing: -3px;
 	}
 }
 
-#tagline {
+#tagline,
+.large-and-bold {
 	color: $tagline-color;
 	font-weight: 800;
 }
 
-#top {
+.center {
 	margin: auto;
 	text-align: center;
 }
