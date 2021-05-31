@@ -39,6 +39,7 @@ $next-bg: $islands-bg;
 		width: 100%;
 		overflow: hidden;
 		line-height: 0;
+		bottom: -0.1em;
 	}
 
 	svg {
@@ -46,13 +47,10 @@ $next-bg: $islands-bg;
 		display: block;
 		width: 100%;
 		height: 25%;
-		border-bottom: 1px solid red;
 		background-color: transparent !important;
 	}
 
 	&.to-desert {
-		border-bottom: 2px solid white;
-
 		svg {
 			fill: $desert-bg;
 		}
