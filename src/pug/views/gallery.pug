@@ -1,0 +1,49 @@
+extends ./layouts/default.pug
+
+block vars
+	- pageTitle = 'サンプルギャラリー | '
+	- navLocation = 'gallery'
+
+block tagline
+	h1#tagline
+		span サンプル
+		span ギャラリー
+
+block content
+	div.full-width
+		div.grid.islands
+			- for (let i = 0; i < 2; ++i)
+				div.item.g-one-template
+					canvas.umi(width='200' height='200')
+			div.item.g-wide-template
+				canvas.umi(width='400' height='200')
+			div.item.g-tall-template
+				canvas.umi(width='200' height='400')
+			div.item.g-two-template
+				canvas.umi(width='400' height='400')
+			div.item.g-no-1-template
+			div.item.g-no-2-template
+		div.divider.islands.to-desert
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.desert
+			div.item.g-one-auto
+				canvas.umi(width='400' height='400')
+			div.item.g-one-auto
+				canvas.umi(width='400' height='400')
+		div.divider.desert.to-forest
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.forest
+			div.item.g-one-auto
+				canvas.umi(width='400' height='400')
+		div.divider.forest.to-arctic
+			custom-svg(class=platform src='img/curve.svg')
+		
+		div.grid.arctic
+			div.item.g-one-auto
+				canvas.umi(width='400' height='400')
+		div.divider.arctic.to-next
+			custom-svg(class=platform src='img/curve.svg')
+	div.center.large-and-bold
+		span 以降

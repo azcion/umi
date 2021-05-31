@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Assignment" />
-    <title>海 ~ Umi</title>
+    <title>サンプルギャラリー | 海 ~ Umi</title>
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
@@ -27,7 +27,7 @@
       <header>
         <a class="logo-container mobile" href="/"><custom-svg class="logo mobile" src="img/logo.svg"></custom-svg></a>
         <nav>
-          <p class="text-left"><a href="/gallery">ギャラリー</a></p>
+          <p class="text-left"><a class="nav-here" href="/gallery">ギャラリー</a></p>
           <p class="text-left"><a href="/guide">使用法</a></p>
           <a class="logo-container screen" href="/"><custom-svg class="logo screen" src="img/logo.svg"></custom-svg></a>
           <p class="text-right"><a href="/contact">連絡する</a></p>
@@ -35,7 +35,7 @@
         </nav>
         <div class="center">
           <div>
-            <h1 id="tagline"><span>ワールド</span><span>ジェネレーター</span></h1>
+            <h1 id="tagline"><span>サンプル</span><span>ギャラリー</span></h1>
           </div>
         </div>
       </header>
@@ -43,9 +43,30 @@
       <main>
         <div class="full-width">
           <div class="grid islands">
+            <div class="item g-one-template"><canvas class="umi" width="200" height="200"></canvas></div>
+            <div class="item g-one-template"><canvas class="umi" width="200" height="200"></canvas></div>
+            <div class="item g-wide-template"><canvas class="umi" width="400" height="200"></canvas></div>
+            <div class="item g-tall-template"><canvas class="umi" width="200" height="400"></canvas></div>
+            <div class="item g-two-template"><canvas class="umi" width="400" height="400"></canvas></div>
+            <div class="item g-no-1-template"></div>
+            <div class="item g-no-2-template"></div>
+          </div>
+          <div class="divider islands to-desert"><custom-svg src="img/curve.svg"></custom-svg></div>
+          <div class="grid desert">
+            <div class="item g-one-auto"><canvas class="umi" width="400" height="400"></canvas></div>
             <div class="item g-one-auto"><canvas class="umi" width="400" height="400"></canvas></div>
           </div>
+          <div class="divider desert to-forest"><custom-svg src="img/curve.svg"></custom-svg></div>
+          <div class="grid forest">
+            <div class="item g-one-auto"><canvas class="umi" width="400" height="400"></canvas></div>
+          </div>
+          <div class="divider forest to-arctic"><custom-svg src="img/curve.svg"></custom-svg></div>
+          <div class="grid arctic">
+            <div class="item g-one-auto"><canvas class="umi" width="400" height="400"></canvas></div>
+          </div>
+          <div class="divider arctic to-next"><custom-svg src="img/curve.svg"></custom-svg></div>
         </div>
+        <div class="center large-and-bold"><span>以降</span></div>
       </main>
       <!-- </content> --><br />
       <footer><small>&copy;&nbsp;2021&nbsp;·&nbsp;Zak&nbsp;Klajderic</small></footer>
