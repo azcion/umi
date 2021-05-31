@@ -46,8 +46,8 @@ $next-bg: $islands-bg;
 		display: block;
 		width: 100%;
 		height: 25%;
-		bottom: -1em;
 		border-bottom: 1px solid red;
+		background-color: transparent !important;
 	}
 
 	&.to-desert {
