@@ -6,35 +6,35 @@
 		justify-self: center;
 	}
 
-	.g-wide0 {
+	.g-wide-auto {
 		grid-area: auto / auto / span 1 / span 2;
 	}
 
-	.g-tall0 {
+	.g-tall-auto {
 		grid-area: auto / auto / span 2 / span 1;
 	}
 
-	.g-two0 {
+	.g-two-auto {
 		grid-area: auto / auto / span 2 / span 2;
 	}
 
-	.g-no-1 {
+	.g-no-1-template {
 		grid-area: no-1;
 	}
 
-	.g-no-2 {
+	.g-no-2-template {
 		grid-area: no-2;
 	}
 
-	.g-two {
+	.g-two-template {
 		grid-area: two;
 	}
 
-	.g-wide {
+	.g-wide-template {
 		grid-area: wide;
 	}
 
-	.g-tall {
+	.g-tall-template {
 		grid-area: tall;
 	}
 }
