@@ -37,3 +37,15 @@ footer {
 	height: 1.25em;
 	width: 100%;
 }
+
+img,
+.logo svg,
+.large-and-bold {
+	animation: fadeIn 200ms ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+}
