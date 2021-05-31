@@ -40,10 +40,7 @@ async function paintCanvases() {
 	let options = {};
 	let config = {};
 	let alt = 'おそらく島の写真';
-	p.makeUmiImgs('.islands .umi-one', options, config, alt);
-	p.makeUmiImgs('.islands .umi-two', options, config, alt);
-	p.makeUmiImgs('.islands .umi-wide', options, config, alt);
-	p.makeUmiImgs('.islands .umi-tall', options, config, alt);
+	p.makeUmiImgs('.islands .umi', options, config, alt);
 
 	options = {
 		overrideSize: true
@@ -67,7 +64,7 @@ async function paintCanvases() {
 		}
 	};
 	alt = 'おそらく砂漠のオアシスの写真';
-	p.makeUmiImgs('.desert .umi-one', options, config, alt);
+	p.makeUmiImgs('.desert .umi', options, config, alt);
 
 	config = {
 		attributes: {
@@ -87,7 +84,7 @@ async function paintCanvases() {
 		}
 	};
 	alt = 'おそらく山岳林の写真';
-	p.makeUmiImgs('.forest .umi-one', options, config, alt);
+	p.makeUmiImgs('.forest .umi', options, config, alt);
 
 	config = {
 		attributes: {
@@ -107,7 +104,7 @@ async function paintCanvases() {
 		}
 	};
 	alt = 'おそらく氷山の写真';
-	p.makeUmiImgs('.arctic .umi-one', options, config, alt);
+	p.makeUmiImgs('.arctic .umi', options, config, alt);
 }
 
 function hexArrayToColors(arr) {
