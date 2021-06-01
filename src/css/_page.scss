@@ -1,9 +1,16 @@
+$blue: rgb(0.04 * 255, 0.32 * 255, 0.68 * 255);
+
 * {
 	box-sizing: border-box;
 }
 
+::selection {
+	background-color: white;
+	color: $blue;
+}
+
 body {
-	background-color: rgb(0.04 * 255, 0.32 * 255, 0.68 * 255);
+	background-color: $blue;
 	margin: 0;
 }
 
