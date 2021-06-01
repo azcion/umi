@@ -1,0 +1,43 @@
+@use 'vars';
+
+@media screen /* wide screen */ and (min-width: vars.$tablet) {
+	.grid.islands {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			'no-1 two two . no-2'
+			'. two two . tall'
+			'. . wide wide tall';
+	}
+}
+
+@media screen /* large screen */ and (min-width: vars.$mobile) and (max-width: vars.$tablet - 1) {
+	.grid.islands {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			'tall two two'
+			'tall two two'
+			'wide wide .'
+			'no-1 . no-2';
+	}
+}
+
+@media screen /* small screen */ and (max-width: vars.$mobile - 1) {
+	.grid.islands {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'two two'
+			'two two'
+			'tall .'
+			'tall .'
+			'wide wide'
+			'no-1 no-2';
+	}
+}
+
+.grid.desert {
+	grid-template-columns: 1fr;
+}
+
+.grid.forest {
+	grid-template-columns: 1fr;
+}
