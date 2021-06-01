@@ -206,6 +206,8 @@ const Umi = class {
 
 		// World generation
 		const radial = b(p('radial'));
+		const horizontal = b(p('horizontal'));
+		const vertical = b(p('vertical'));
 		const mass = i(p('mass'));
 		const octaves = i(p('octaves'));
 		const persistence = d(p('persistence'));
@@ -221,6 +223,11 @@ const Umi = class {
 			offsety: y,
 			square: square,
 			radial: radial,
+			_rad: radial ? 1 : 0,
+			horizontal: horizontal,
+			_hor: horizontal ? 1 : 0,
+			vertical: vertical,
+			_ver: vertical ? 1 : 0,
 			mass: mass,
 			octaves: octaves,
 			persistence: Umi.formatShaderFloat(persistence),
@@ -245,7 +252,8 @@ const Umi = class {
 				value == null ||
 				value === 'NaN' ||
 				value === Umi._attributes[a] ||
-				value === Umi.formatShaderFloat(Umi._attributes[a])
+				value === Umi.formatShaderFloat(Umi._attributes[a]) ||
+				value[0] === '_'
 			) {
 				continue;
 			}
@@ -341,7 +349,8 @@ const Umi = class {
 			return shader;
 		}
 
-		console.log(gl.getShaderInfoLog(shader));
+		console.log(Umi.enumerateSource(source));
+		console.error(gl.getShaderInfoLog(shader));
 		gl.deleteShader(shader);
 	}
 
@@ -359,6 +368,13 @@ const Umi = class {
 		console.log(gl.getProgramInfoLog(program));
 		gl.deleteProgram(program);
 	}
+
+	static enumerateSource(source) {
+		return source
+			.split('\n')
+			.map((row, i) => `${('   ' + i).slice(-3)}: ${row}`)
+			.join('\n');
+	}
 };
 
 UMI_STATIC_PROPERTIES: {
@@ -371,12 +387,19 @@ UMI_STATIC_PROPERTIES: {
 		offsetx: 0, // int
 		offsety: 0, // int
 		square: false, // bool
-		radial: true, // bool
+		radial: false, // bool
+		horizontal: false, // bool
+		vertical: false, // bool
 		mass: 150, // int
 		octaves: 6, // int
 		persistence: 0.6, // float
 		frequency: 0.005, // float
-		water: 0.5 // float
+		water: 0.5, // float
+
+		// These are implicit
+		_rad: 0,
+		_hor: 0,
+		_ver: 0
 	};
 
 	// Alternative shorter param names
@@ -387,6 +410,8 @@ UMI_STATIC_PROPERTIES: {
 		offsety: 'y',
 		square: 'sq',
 		radial: 'r',
+		horizontal: 'hz',
+		vertical: 'vt',
 		mass: 'm',
 		octaves: 'o',
 		persistence: 'p',

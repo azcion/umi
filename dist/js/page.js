@@ -55,7 +55,11 @@ async function paintIndexCanvases() {
 	const p = new Paint(frac);
 
 	let options = {};
-	let config = {};
+	let config = {
+		attributes: {
+			radial: true
+		}
+	};
 	let alt = 'おそらく島の写真';
 	p.makeUmiImgs('.umi', options, config, alt);
 }
@@ -73,7 +77,6 @@ async function paintGuideCanvases() {
 	let options = {};
 	let config = {
 		attributes: {
-			radial: false,
 			mass: 1000,
 			persistence: 0.55,
 			frequency: 0.001,
@@ -134,20 +137,22 @@ async function paintGalleryCanvases() {
 	const p = new Paint(frac);
 
 	let options = {};
-	let config = {};
+	let config = {
+		attributes: {
+			radial: true
+		}
+	};
 	let alt = 'おそらく島の写真';
 	p.makeUmiImgs('.islands .umi', options, config, alt);
 	await new Promise(r => setTimeout(r, 250));
 
-	options = {
-		overrideSize: true
-	};
 	config = {
 		attributes: {
-			height: gridHeight / 2,
+			horizontal: true,
 			mass: 500,
 			octaves: 5,
-			frequency: 0.0025
+			frequency: 0.0025,
+			water: 0.45
 		},
 		gradients: {
 			colors: hexArrayToColors([
@@ -165,8 +170,8 @@ async function paintGalleryCanvases() {
 
 	config = {
 		attributes: {
+			horizontal: true,
 			height: gridHeight,
-			square: false,
 			water: 0.4
 		},
 		gradients: {
@@ -185,6 +190,7 @@ async function paintGalleryCanvases() {
 
 	config = {
 		attributes: {
+			horizontal: true,
 			mass: 300,
 			frequency: 0.0025
 		},

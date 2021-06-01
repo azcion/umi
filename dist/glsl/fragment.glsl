@@ -6,6 +6,8 @@ precision highp float;
 #define OFFSETX %offsetx%.
 #define OFFSETY %offsety%.
 #define RADIAL %radial%
+#define HORIZONTAL %horizontal%
+#define VERTICAL %vertical%
 #define MASS %mass%.
 #define OCTAVES %octaves%
 #define PERSISTENCE %persistence%
@@ -15,6 +17,12 @@ precision highp float;
 #define M289 .00346020761 // 1 / 289
 #define K .142857142857 // 1 / 7
 #define Ko .428571428571 // 1 / 2 - K / 2
+
+#define RAD %_rad%.
+#define HOR %_hor%.
+#define VER %_ver%.
+#define FSUM RAD + HOR + VER
+#define FDIV 1. / (1. + HOR + VER)
 
 vec3 mod289(vec3 x) {
 	return x - floor(x * M289) * 289.;
@@ -141,10 +149,27 @@ void main() {
 	float yr = uv.y / HEIGHT;
 	uv = vec2(uv.x + OFFSETX, uv.y + OFFSETY);
 	float d = 1.125;
+	float fRad;
+	float fHor;
+	float fVer;
 	float f;
 	
-	if (RADIAL) {
-		f = (1. - xr * xr + xr - d) + (1. - yr * yr + yr - d);
+	if (FSUM > 0.) {
+		if (RADIAL) {
+			fRad = (1. - xr * xr + xr - d) + (1. - yr * yr + yr - d);
+		}
+
+		if (HORIZONTAL) {
+			fHor = .5 - abs(yr - .5);
+			fHor *= FDIV;
+		}
+
+		if (VERTICAL) {
+			fVer = .5 - abs(xr - .5);
+			fVer *= FDIV;
+		}
+
+		f = fRad * RAD + fHor * HOR + fVer * VER;
 	} else {
 		f = .25;
 	}
