@@ -21,15 +21,16 @@ function paintCanvases() {
 }
 
 const Paint = class {
-	constructor(fractionalSize) {
+	constructor(fractionalSize, pixelsPerCell) {
 		this.frac = fractionalSize;
+		this.ppc = pixelsPerCell;
 	}
 
 	makeUmiImgs(selector, options, config, alt) {
 		[...document.querySelectorAll(selector)].forEach(e => {
 			const gl = e.getContext('webgl');
-			gl.canvas.width = (gl.canvas.width / 200) * this.frac;
-			gl.canvas.height = (gl.canvas.height / 200) * this.frac;
+			gl.canvas.width = (gl.canvas.width / this.ppc) * this.frac;
+			gl.canvas.height = (gl.canvas.height / this.ppc) * this.frac;
 
 			const umi = new Umi(gl, options);
 			umi.configureShader(config);
@@ -52,7 +53,7 @@ async function paintIndexCanvases() {
 	const nColumns = style['grid-template-columns'].split(' ').length;
 	const width = parseInt(style.width.slice(0, -2));
 	const frac = width / nColumns;
-	const p = new Paint(frac);
+	const p = new Paint(frac, 200);
 
 	let options = {};
 	let config = {
@@ -72,7 +73,7 @@ async function paintGuideCanvases() {
 	const nColumns = style['grid-template-columns'].split(' ').length;
 	const width = parseInt(style.width.slice(0, -2));
 	const frac = width / nColumns;
-	const p = new Paint(frac);
+	const p = new Paint(frac, 200);
 
 	let options = {};
 	let config = {
@@ -134,7 +135,7 @@ async function paintGalleryCanvases() {
 	const width = parseInt(style.width.slice(0, -2));
 	const gridHeight = parseInt(style.height.slice(0, -2));
 	const frac = width / nColumns;
-	const p = new Paint(frac);
+	const p = new Paint(frac, 200);
 
 	let options = {};
 	let config = {
