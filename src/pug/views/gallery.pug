@@ -26,10 +26,9 @@ block content
 			custom-svg(class=platform src='img/curve.svg')
 		
 		div.grid.desert
-			div.item.g-one-auto
-				canvas.umi(width='400' height='400')
-			div.item.g-one-auto
-				canvas.umi(width='400' height='400')
+			- for (let i = 0; i < 3; ++i)
+				div.item.g-wide-auto
+					canvas.umi(width='400' height='200')
 		div.divider.desert.to-forest
 			custom-svg(class=platform src='img/curve.svg')
 		
