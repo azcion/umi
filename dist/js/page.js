@@ -2,6 +2,24 @@
 
 window.onload = paintCanvases;
 
+function paintCanvases() {
+	const page = document
+		.querySelector('meta[data-page]')
+		.getAttribute('data-page');
+
+	switch (page) {
+		case 'index':
+			paintIndexCanvases();
+			break;
+		case 'gallery':
+			paintGalleryCanvases();
+			break;
+		case 'guide':
+			paintGuideCanvases();
+			break;
+	}
+}
+
 const Paint = class {
 	constructor(fractionalSize) {
 		this.frac = fractionalSize;
@@ -26,7 +44,85 @@ const Paint = class {
 	}
 };
 
-async function paintCanvases() {
+async function paintIndexCanvases() {
+	await Umi.loadShaders('glsl/');
+
+	const grid = document.querySelector('.grid');
+	const style = getComputedStyle(grid);
+	const nColumns = style['grid-template-columns'].split(' ').length;
+	const width = parseInt(style.width.slice(0, -2));
+	const frac = width / nColumns;
+	const p = new Paint(frac);
+
+	let options = {};
+	let config = {};
+	let alt = 'おそらく島の写真';
+	p.makeUmiImgs('.umi', options, config, alt);
+}
+
+async function paintGuideCanvases() {
+	await Umi.loadShaders('glsl/');
+
+	const grid = document.querySelector('.grid');
+	const style = getComputedStyle(grid);
+	const nColumns = style['grid-template-columns'].split(' ').length;
+	const width = parseInt(style.width.slice(0, -2));
+	const frac = width / nColumns;
+	const p = new Paint(frac);
+
+	let options = {};
+	let config = {
+		attributes: {
+			radial: false,
+			mass: 1000,
+			persistence: 0.55,
+			frequency: 0.001,
+			water: 0.4
+		},
+		gradients: {
+			colors: hexArrayToColors([
+				'#96A18B',
+				'#596D5A',
+				'#1D160B',
+				'#AAA268',
+				'#EBB468',
+				'#959B5B',
+				'#1D160B',
+				'#51572A',
+				'#51572A',
+				'#1D160B',
+				'#836E4B',
+				'#E4CC95',
+				'#8D775A',
+				'#5e503b',
+				'#CFCAA2'
+			]),
+			// prettier-ignore
+			positions: [
+				0,
+				0.14,
+				0.16,
+				0.18,
+				0.25,
+				0.48,
+				0.49,
+				0.50,
+				0.51,
+				0.68,
+				0.69,
+				0.7,
+				0.8,
+				0.9,
+				0.99,
+				1
+			]
+		}
+	};
+	let alt = 'おそらく島の写真';
+	p.makeUmiImgs('.umi', options, config, alt);
+}
+
+async function paintGalleryCanvases() {
 	await Umi.loadShaders('glsl/');
 
 	const grid = document.querySelector('.grid');
