@@ -1,0 +1,16 @@
+extends ./layouts/default.pug
+
+block vars
+	- pageTitle = 'ユーザーマニュアル'
+	- navLocation = 'guide'
+
+block tagline
+	h1#tagline
+		span この航海
+		span に出よう
+
+block content
+	div.full-width
+		div.grid.guide
+			div.item.g-one-auto.poster
+				canvas.umi(width='400' height='400')
