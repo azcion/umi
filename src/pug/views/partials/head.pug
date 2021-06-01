@@ -5,7 +5,7 @@ head
 	meta(http-equiv='X-UA-Compatible' content='IE=edge')
 	meta(name='viewport' content='width=device-width, initial-scale=1')
 	meta(name='description' content='Assignment')
-	title=pageTitle + '海 ~ Umi'
+	title=pageTitle + (pageTitle.length > 0 ? ' • ' : '') + '海 ~ Umi'
 	include ./favicons.pug
 	link(rel='stylesheet' href='css/style.min.css')
 	script(src='js/umi.js')
