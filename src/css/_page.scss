@@ -9,6 +9,10 @@ $blue: rgb(0.04 * 255, 0.32 * 255, 0.68 * 255);
 	color: $blue;
 }
 
+p {
+	color: $text-color;
+}
+
 body {
 	background-color: $blue;
 	margin: 0;
