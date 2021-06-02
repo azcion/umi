@@ -35,3 +35,9 @@
 		max-height: unset;
 	}
 }
+
+@media screen /* small screen */ and (max-width: $mobile - 1) {
+	.flex {
+		margin: 0 1em 0 0;
+	}
+}
