@@ -187,8 +187,8 @@ const Umi = class {
 		const b = s => [1, '1', true, 'true'].includes(s);
 
 		// Width and height
-		let w = i(p('width')) || window.innerWidth - 35;
-		let h = i(p('height')) || window.innerHeight - 35;
+		let w = i(p('width')) || window.innerWidth;
+		let h = i(p('height')) || window.innerHeight;
 		const square = b(p('square'));
 
 		if (square) {
