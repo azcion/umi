@@ -77,15 +77,15 @@ async function paintGuideCanvases() {
 
 	let options = {};
 	let config = CONFIG.guide_top;
-	let alt = 'おそらく島の写真';
+	let alt = '手描き地図風の地形';
 	p.makeUmiImgs('#guide-top', options, config, alt);
 
 	config = CONFIG.guide_direction_radial;
-	alt = 'おそらく島の写真';
+	alt = '手描き地図風の島';
 	p.makeUmiImgs('#dir-radial', options, config, alt);
 
 	config = CONFIG.guide_direction_horizontal;
-	alt = 'おそらく島の写真';
+	alt = '手描き地図風の水平地形';
 	p.makeUmiImgs('#dir-horizontal', options, config, alt);
 
 	config = CONFIG.guide_direction_vertical;
@@ -93,15 +93,15 @@ async function paintGuideCanvases() {
 	p.makeUmiImgs('#dir-vertical', options, config, alt);
 
 	config = CONFIG.guide_noise_octaves;
-	alt = 'おそらく島の写真';
+	alt = '手描きの地図のスタイルの非常にシンプルな地形';
 	p.makeUmiImgs('#noi-octaves', options, config, alt);
 
 	config = CONFIG.guide_noise_persistence;
-	alt = 'おそらく島の写真';
+	alt = '手描きの地図のスタイルの非常に詳細な地形';
 	p.makeUmiImgs('#noi-persistence', options, config, alt);
 
 	config = CONFIG.guide_noise_frequency;
-	alt = 'おそらく島の写真';
+	alt = '手描きの地図のように細かく細かい島々が並ぶ、非常に断片的な世界';
 	p.makeUmiImgs('#noi-frequency', options, config, alt);
 }
 
