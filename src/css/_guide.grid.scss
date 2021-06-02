@@ -1,0 +1,45 @@
+@use 'vars';
+
+@media screen /* wide screen */ and (min-width: vars.$mobile) {
+	.guide-top {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			'two two tall'
+			'two two tall';
+	}
+
+	.guide-direction {
+		grid-template-columns: 1fr 1fr 0.2fr 0.8fr;
+		grid-template-areas:
+			'tall . . wide'
+			'tall . . wide'
+			'tall . . wide';
+	}
+}
+
+@media screen /* small screen */ and (max-width: vars.$mobile - 1) {
+	.guide-top {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'two two'
+			'two two'
+			'tall tall';
+	}
+
+	.guide-direction {
+		grid-template-columns: 0.5fr 1fr 0.2fr;
+		grid-template-areas:
+			'wide wide wide'
+			'tall . .'
+			'tall . .'
+			'tall . .';
+	}
+}
+
+.item.block img {
+	display: block;
+}
+
+.width-100 {
+	width: 100% !important;
+}

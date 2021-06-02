@@ -46,8 +46,38 @@
       </header>
       <!-- </header>--><!-- <content> -->
       <main>
-        <div class="grid guide">
-          <div class="item g-one-auto poster"><canvas class="umi" width="400" height="400"></canvas></div>
+        <div class="grid guide-top">
+          <div class="item g-two-template poster">
+            <canvas class="umi" id="guide-top" width="400" height="400"></canvas>
+          </div>
+          <div class="item g-tall-template">
+            <p class="vert">
+              特定の色のグラデーションを使用すると、 レンダリングに手描きのような外観を与えることができます。
+              十分な創造性と努力があれば、 ほぼすべてのアートスタイルを表現できます。
+            </p>
+          </div>
+        </div>
+        <div class="grid guide-direction">
+          <div class="item g-wide-template">
+            <p class="vert">方向オプションを提供することで、 地形の最終的な形状を制御できます。</p>
+          </div>
+          <div class="item g-tall-template flex">
+            <p class="vert-always">「放射状」オプションは円を生成します</p>
+            <p class="vert-always">「水平」オプションは上下を深くします</p>
+            <p class="vert-always">「縦」オプションは左右が深くなります</p>
+          </div>
+          <div class="item g-one-auto poster">
+            <canvas class="umi" id="dir-radial" width="200" height="200"></canvas>
+          </div>
+          <div class="item g-one-auto width-100"><p class="vert-always">放射状の</p></div>
+          <div class="item g-one-auto poster">
+            <canvas class="umi" id="dir-horizontal" width="200" height="200"></canvas>
+          </div>
+          <div class="item g-one-auto width-100"><p class="vert-always">水平</p></div>
+          <div class="item g-one-auto poster">
+            <canvas class="umi" id="dir-vertical" width="200" height="200"></canvas>
+          </div>
+          <div class="item g-one-auto width-100"><p class="vert-always">垂直</p></div>
         </div>
       </main>
       <!-- </content> --><br />

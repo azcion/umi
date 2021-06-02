@@ -10,6 +10,41 @@ block tagline
 		span に出よう
 
 block content
-	div.grid.guide
+	div.grid.guide-top
+		div.item.g-two-template.poster
+			canvas.umi#guide-top(width='400' height='400')
+		div.item.g-tall-template
+			p.vert.
+				特定の色のグラデーションを使用すると、
+				レンダリングに手描きのような外観を与えることができます。 
+				十分な創造性と努力があれば、
+				ほぼすべてのアートスタイルを表現できます。
+		
+	div.grid.guide-direction
+		div.item.g-wide-template
+			p.vert.
+				方向オプションを提供することで、
+				地形の最終的な形状を制御できます。
+		
+		div.item.g-tall-template.flex
+			p.vert-always 「放射状」オプションは円を生成します
+			p.vert-always 「水平」オプションは上下を深くします
+			p.vert-always 「縦」オプションは左右が深くなります
+
 		div.item.g-one-auto.poster
-			canvas.umi(width='400' height='400')
+			canvas.umi#dir-radial(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always 放射状の
+		
+		div.item.g-one-auto.poster
+			canvas.umi#dir-horizontal(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always 水平
+		
+		div.item.g-one-auto.poster
+			canvas.umi#dir-vertical(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always 垂直
+		
+		
+		
