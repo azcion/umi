@@ -1,10 +1,5 @@
 @import 'guide.grid';
 
-.vert,
-.vert-always {
-	font-size: 1.5em;
-}
-
 .vert {
 	margin: 0 0 0.5em 0.2em;
 }
@@ -15,7 +10,7 @@
 	margin: 0.5em 0 0;
 }
 
-@media screen /* small screen */ and (min-width: $mobile) {
+@media screen /* large screen */ and (min-width: $mobile) {
 	.vert {
 		writing-mode: vertical-rl;
 		margin: 0.5em 0 0;
@@ -33,11 +28,15 @@
 
 	p {
 		max-height: unset;
+		font-size: 1.5em;
 	}
 }
 
 @media screen /* small screen */ and (max-width: $mobile - 1) {
 	.flex {
 		margin: 0 1em 0 0;
+	.vert,
+	.vert-always {
+		font-size: 1.25em;
 	}
 }
