@@ -45,6 +45,29 @@ block content
 			canvas.umi#dir-vertical(width='200' height='200')
 		div.item.g-one-auto.width-100
 			p.vert-always 垂直
+	
+	div.grid.guide-direction
+		div.item.g-wide-template
+			p.vert.
+				ノイズ属性を変更することで、
+				結果として生じるノイズの一般的なノイズの形状と粗さを微調整できます。 
 		
+		div.item.g-tall-template.flex
+			p.vert-always 「オクターブ」はフラクタルの深さを設定します
+			p.vert-always 「持続性」は、小さいレベルがどれだけ強いかを設定します
+			p.vert-always 「頻度」はフラクタルの初期サイズを設定します
 		
+		div.item.g-one-auto.poster
+			canvas.umi#noi-octaves(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always オクターブ
 		
+		div.item.g-one-auto.poster
+			canvas.umi#noi-persistence(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always 持続性
+		
+		div.item.g-one-auto.poster
+			canvas.umi#noi-frequency(width='200' height='200')
+		div.item.g-one-auto.width-100
+			p.vert-always 周波数

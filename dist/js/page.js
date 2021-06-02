@@ -91,6 +91,18 @@ async function paintGuideCanvases() {
 	config = CONFIG.guide_direction_vertical;
 	alt = 'おそらく島の写真';
 	p.makeUmiImgs('#dir-vertical', options, config, alt);
+
+	config = CONFIG.guide_noise_octaves;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#noi-octaves', options, config, alt);
+
+	config = CONFIG.guide_noise_persistence;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#noi-persistence', options, config, alt);
+
+	config = CONFIG.guide_noise_frequency;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#noi-frequency', options, config, alt);
 }
 
 async function paintGalleryCanvases() {

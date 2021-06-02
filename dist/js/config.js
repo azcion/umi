@@ -118,6 +118,24 @@ const CONFIG = {
 			vertical: true
 		},
 		gradients: GRADIENTS.oldMap
+	},
+	guide_noise_octaves: {
+		attributes: {
+			octaves: 3
+		},
+		gradients: GRADIENTS.oldMap
+	},
+	guide_noise_persistence: {
+		attributes: {
+			persistence: 0.8
+		},
+		gradients: GRADIENTS.oldMap
+	},
+	guide_noise_frequency: {
+		attributes: {
+			frequency: 0.05
+		},
+		gradients: GRADIENTS.oldMap
 	}
 };
 
