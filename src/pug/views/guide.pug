@@ -1,73 +1,64 @@
 extends ./layouts/default.pug
 
 block vars
-	- pageTitle = 'ユーザーマニュアル'
+	- pageTitle = lang.guide.title.jp
 	- navLocation = 'guide'
 
 block tagline
 	h1#tagline
-		span この航海
-		span に出よう
+		span #{lang.guide.tagline.jp}
 
 block content
 	div.grid.guide-top
 		div.item.g-two-template.poster
 			canvas.umi#guide-top(width='400' height='400')
 		div.item.g-tall-template
-			p.vert.
-				特定の色のグラデーションを使用すると、
-				レンダリングに手描きのような外観を与えることができます。 
-				十分な創造性と努力があれば、
-				ほぼすべてのアートスタイルを表現できます。
+			p.vert #{lang.guide.top.jp}
 		
 	div.grid.guide-direction
 		div.item.g-wide-template
-			p.vert.
-				方向オプションを提供することで、
-				地形の最終的な形状を制御できます。
+			p.vert #{lang.guide.directions.jp}
 		
 		div.item.g-tall-template.flex
-			p.vert-always 「放射状」オプションは円を生成します
-			p.vert-always 「水平」オプションは上下を深くします
-			p.vert-always 「縦」オプションは左右が深くなります
+			p.vert-always #{lang.guide.radial.jp}
+			p.vert-always #{lang.guide.horizontal.jp}
+			p.vert-always #{lang.guide.vertical.jp}
 
 		div.item.g-one-auto.poster
 			canvas.umi#dir-radial(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always 放射状の
+			p.vert-always #{lang.guide.side_radial.jp}
 		
 		div.item.g-one-auto.poster
 			canvas.umi#dir-horizontal(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always 水平
+			p.vert-always #{lang.guide.side_horizontal.jp}
 		
 		div.item.g-one-auto.poster
 			canvas.umi#dir-vertical(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always 垂直
+			p.vert-always #{lang.guide.side_vertical.jp}
 	
 	div.grid.guide-direction
 		div.item.g-wide-template
-			p.vert.
-				ノイズ属性を変更することで、
-				結果として生じるノイズの一般的なノイズの形状と粗さを微調整できます。 
+			p.vert #{lang.guide.noise.jp}
 		
 		div.item.g-tall-template.flex
-			p.vert-always 「オクターブ」はフラクタルの深さを設定します
-			p.vert-always 「持続性」は小さなレイヤーの強さを設定します 
-			p.vert-always 「頻度」はフラクタルの初期サイズを設定します
+			p.vert-always #{lang.guide.octaves.jp}
+			p.vert-always #{lang.guide.persistence.jp} 
+			p.vert-always #{lang.guide.frequency.jp}
 		
 		div.item.g-one-auto.poster
 			canvas.umi#noi-octaves(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always オクターブ
+			p.vert-always #{lang.guide.side_octaves.jp}
 		
 		div.item.g-one-auto.poster
 			canvas.umi#noi-persistence(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always 持続性
+			p.vert-always #{lang.guide.side_persistence.jp}
 		
 		div.item.g-one-auto.poster
 			canvas.umi#noi-frequency(width='200' height='200')
 		div.item.g-one-auto.width-100
-			p.vert-always 周波数
+			p.vert-always #{lang.guide.side_frequency.jp}

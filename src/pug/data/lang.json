@@ -1,0 +1,118 @@
+{
+	"lang": {
+		"head": {
+			"description": {
+				"en": "This website was created in part out of personal interest, but also to be submitted as a school project.",
+				"jp": "このサイトは、個人的な興味もありますが、学校の課題として提出するために作りました。"
+			}
+		},
+		"header": {
+			"gallery": {
+				"en": "gallery",
+				"jp": "ギャラリー"
+			},
+			"guide": {
+				"en": "guide",
+				"jp": "使用法"
+			},
+			"contact": {
+				"en": "contact",
+				"jp": "連絡する"
+			},
+			"github": {
+				"en": "source code",
+				"jp": "ソースコード"
+			}
+		},
+		"index": {
+			"tagline": {
+				"en": "the sea is waiting to be explored",
+				"jp": "海は探検されるのを待っています"
+			}
+		},
+		"gallery": {
+			"title": {
+				"en": "example gallery",
+				"jp": "サンプルギャラリー"
+			},
+			"tagline": {
+				"en": "adventure time",
+				"jp": "冒険の時間"
+			},
+			"end": {
+				"en": "and beyond",
+				"jp": "そしてその先へ"
+			}
+		},
+		"guide": {
+			"title": {
+				"en": "user manual",
+				"jp": "ユーザーマニュアル"
+			},
+			"tagline": {
+				"en": "let's go on a voyage",
+				"jp": "航海に出よう"
+			},
+			"top": {
+				"en": "Using certain color gradients can give the rendering a hand-drawn look.  With enough creativity and effort, almost any art style could be expressed.",
+				"jp": "特定の色のグラデーションを使うことで、手描き風のレンダリングが可能になります。 工夫と努力次第で、ほとんどのアートスタイルを表現することができます。"
+			},
+			"directions": {
+				"en": "You can control the final shape of the terrain by providing directional options.",
+				"jp": "方向性の選択肢を用意することで、地形の最終的な形をコントロールすることができます。"
+			},
+			"radial": {
+				"en": "The \"radial\" option generates a circular shape",
+				"jp": "「放射状」オプションは円を生成します"
+			},
+			"horizontal": {
+				"en": "The \"horizontal\" option deepens the top and bottom",
+				"jp": "「水平」オプションは上下を深くします"
+			},
+			"vertical": {
+				"en": "The \"vertical\" option is deeper on the left and right",
+				"jp": "「垂直」オプションは左右が深くなります"
+			},
+			"side_radial": {
+				"en": "radial",
+				"jp": "放射状"
+			},
+			"side_horizontal": {
+				"en": "horizontal",
+				"jp": "水平"
+			},
+			"side_vertical": {
+				"en": "vertical",
+				"jp": "垂直"
+			},
+			"noise": {
+				"en": "By changing noise attributes, you can fine-tune the general shape and roughness of the resulting noise.",
+				"jp": "ノイズのアトリビュートを変更することで、ノイズの全体的な形状や粗さを微調整することができます。"
+			},
+			"octaves": {
+				"en": "The \"octaves\" attribute sets the depth of the fractal",
+				"jp": "「オクターブ」はフラクタルの深さを設定します"
+			},
+			"persistence": {
+				"en": "\"Persistence\" sets the intensity of small details",
+				"jp": "「持続性」は小さなディテールの強度を設定します"
+			},
+			"frequency": {
+				"en": "The \"frequency\" attribute sets the initial size of the fractal",
+				"jp": "「周波数」はフラクタルの初期サイズを設定します"
+			},
+			"side_octaves": {
+				"en": "octaves",
+				"jp": "オクターブ"
+			},
+			"side_persistence": {
+				"en": "persistence",
+				"jp": "持続性"
+			},
+			"side_frequency": {
+				"en": "frequency",
+				"jp": "周波数"
+			}
+		}
+	}
+}

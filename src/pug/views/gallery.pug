@@ -1,12 +1,12 @@
 extends ./layouts/default.pug
 
 block vars
-	- pageTitle = 'サンプルギャラリー'
+	- pageTitle = lang.gallery.title.jp
 	- navLocation = 'gallery'
 
 block tagline
 	h1#tagline
-		span 冒険の時間
+		span #{lang.gallery.tagline.jp}
 
 block content
 	div.full-width
@@ -44,4 +44,4 @@ block content
 		div.divider.arctic.to-next
 			custom-svg(class=platform src='img/curve.svg')
 	div.center.large-and-bold
-		span 以降
+		span #{lang.gallery.end.jp}

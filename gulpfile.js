@@ -31,10 +31,16 @@ exports.js = js;
 
 //#region html
 const pug = require('gulp-pug-3');
+const fs = require('fs');
 const data = require('gulp-data');
 const prettier = require('gulp-prettier');
 function html() {
 	return src('./src/pug/views/*.pug')
+		.pipe(
+			data(function () {
+				return JSON.parse(fs.readFileSync('./src/pug/data/lang.json'));
+			})
+		)
 		.pipe(pug())
 		.pipe(
 			prettier({

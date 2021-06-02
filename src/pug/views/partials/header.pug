@@ -3,11 +3,11 @@ include ../mixins/_header
 header
 	+logo('mobile')
 	nav
-		+pal('ギャラリー', 'gallery')
-		+pal('使用法', 'guide')
+		+pal(lang.header.gallery.jp, 'gallery')
+		+pal(lang.header.guide.jp, 'guide')
 		+logo('screen')
-		+par('連絡する', 'contact')
-		+par('ソースコード', '', 'https://github.com/azcion/Umi')
+		+par(lang.header.contact.jp, 'contact')
+		+par(lang.header.github.jp, '', 'https://github.com/azcion/Umi')
 	div.center
 		div
 			block tagline
