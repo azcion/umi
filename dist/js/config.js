@@ -1,3 +1,5 @@
+const HEIGHT = 800;
+
 const GRADIENTS = {
 	desert: {
 		colors: hexArrayToColors([
@@ -63,6 +65,7 @@ const CONFIG = {
 	},
 	desert: {
 		attributes: {
+			height: HEIGHT / 3,
 			horizontal: true,
 			mass: 500,
 			octaves: 5,
@@ -73,6 +76,7 @@ const CONFIG = {
 	},
 	forest: {
 		attributes: {
+			height: HEIGHT,
 			horizontal: true,
 			water: 0.4
 		},
@@ -80,7 +84,9 @@ const CONFIG = {
 	},
 	arctic: {
 		attributes: {
+			height: HEIGHT,
 			horizontal: true,
+			radial: true,
 			mass: 300,
 			frequency: 0.0025
 		},

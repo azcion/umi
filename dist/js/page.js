@@ -110,6 +110,9 @@ async function paintGalleryCanvases() {
 	p.makeUmiImgs('.islands .umi', options, config, alt);
 	await new Promise(r => setTimeout(r, 250));
 
+	options = {
+		overrideSize: true
+	};
 	config = CONFIG.desert;
 	alt = 'おそらく砂漠のオアシスの写真';
 	p.makeUmiImgs('.desert .umi', options, config, alt);
