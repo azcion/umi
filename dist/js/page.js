@@ -76,54 +76,21 @@ async function paintGuideCanvases() {
 	const p = new Paint(frac, 200);
 
 	let options = {};
-	let config = {
-		attributes: {
-			mass: 1000,
-			persistence: 0.55,
-			frequency: 0.001,
-			water: 0.4
-		},
-		gradients: {
-			colors: hexArrayToColors([
-				'#96A18B',
-				'#596D5A',
-				'#1D160B',
-				'#AAA268',
-				'#EBB468',
-				'#959B5B',
-				'#1D160B',
-				'#51572A',
-				'#51572A',
-				'#1D160B',
-				'#836E4B',
-				'#E4CC95',
-				'#8D775A',
-				'#5e503b',
-				'#CFCAA2'
-			]),
-			// prettier-ignore
-			positions: [
-				0,
-				0.14,
-				0.16,
-				0.18,
-				0.25,
-				0.48,
-				0.49,
-				0.50,
-				0.51,
-				0.68,
-				0.69,
-				0.7,
-				0.8,
-				0.9,
-				0.99,
-				1
-			]
-		}
-	};
+	let config = CONFIG.guide_top;
 	let alt = 'おそらく島の写真';
-	p.makeUmiImgs('.umi', options, config, alt);
+	p.makeUmiImgs('#guide-top', options, config, alt);
+
+	config = CONFIG.guide_direction_radial;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#dir-radial', options, config, alt);
+
+	config = CONFIG.guide_direction_horizontal;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#dir-horizontal', options, config, alt);
+
+	config = CONFIG.guide_direction_vertical;
+	alt = 'おそらく島の写真';
+	p.makeUmiImgs('#dir-vertical', options, config, alt);
 }
 
 async function paintGalleryCanvases() {
@@ -138,88 +105,20 @@ async function paintGalleryCanvases() {
 	const p = new Paint(frac, 200);
 
 	let options = {};
-	let config = {
-		attributes: {
-			radial: true
-		}
-	};
+	let config = CONFIG.islands;
 	let alt = 'おそらく島の写真';
 	p.makeUmiImgs('.islands .umi', options, config, alt);
 	await new Promise(r => setTimeout(r, 250));
 
-	config = {
-		attributes: {
-			horizontal: true,
-			mass: 500,
-			octaves: 5,
-			frequency: 0.0025,
-			water: 0.45
-		},
-		gradients: {
-			colors: hexArrayToColors([
-				'#F1C673',
-				'#EAAC4A',
-				'#2B601D',
-				'#F8DDA0',
-				'#A6D5D3'
-			]),
-			positions: [0, 0.6, 0.8, 0.85, 0.88]
-		}
-	};
+	config = CONFIG.desert;
 	alt = 'おそらく砂漠のオアシスの写真';
 	p.makeUmiImgs('.desert .umi', options, config, alt);
 
-	config = {
-		attributes: {
-			horizontal: true,
-			height: gridHeight,
-			water: 0.4
-		},
-		gradients: {
-			colors: hexArrayToColors([
-				'#3B5D0D',
-				'#13280A',
-				'#8B754B',
-				'#C8CBCC',
-				'#FFFFFF'
-			]),
-			positions: [0, 0.6, 0.8, 0.85, 0.99]
-		}
-	};
+	config = CONFIG.forest;
 	alt = 'おそらく山岳林の写真';
 	p.makeUmiImgs('.forest .umi', options, config, alt);
 
-	config = {
-		attributes: {
-			horizontal: true,
-			mass: 300,
-			frequency: 0.0025
-		},
-		gradients: {
-			colors: hexArrayToColors([
-				'#1B3983',
-				'#264EB8',
-				'#72C8FB',
-				'#CCFDFF',
-				'#EBFAFE',
-				'#DDFFFF'
-			]),
-			positions: [0, 0.01, 0.1, 0.2, 0.5, 0.99]
-		}
-	};
+	config = CONFIG.arctic;
 	alt = 'おそらく氷山の写真';
 	p.makeUmiImgs('.arctic .umi', options, config, alt);
-}
-
-function hexArrayToColors(arr) {
-	arr = arr.map(hex => {
-		const c = hex.replace('#', '0x');
-		return [
-			((c >> 16) & 255) / 255,
-			((c >> 8) & 255) / 255,
-			(c & 255) / 255
-		].map(c => Math.round(c * 100) / 100);
-	});
-
-	return arr;
 }
