@@ -1,6 +1,6 @@
 @use 'vars';
 
-@media screen /* wide screen */ and (min-width: vars.$mobile) {
+@media screen /* large screen */ and (min-width: vars.$mobile) {
 	.guide-top {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
@@ -33,6 +33,19 @@
 			'tall . .'
 			'tall . .'
 			'tall . .';
+	}
+
+	.flex {
+		margin: 0 1em 0 0;
+	}
+}
+
+.flex {
+	display: flex;
+	flex-direction: row-reverse;
+
+	p {
+		max-height: unset;
 	}
 }
 

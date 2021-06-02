@@ -19,22 +19,11 @@
 	.vert,
 	.vert-always {
 		max-height: ($mobile - 40px) / 1.55;
-	}
-}
-
-.flex {
-	display: flex;
-	flex-direction: row-reverse;
-
-	p {
-		max-height: unset;
 		font-size: 1.5em;
 	}
 }
 
 @media screen /* small screen */ and (max-width: $mobile - 1) {
-	.flex {
-		margin: 0 1em 0 0;
 	.vert,
 	.vert-always {
 		font-size: 1.25em;
