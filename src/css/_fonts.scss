@@ -1,0 +1,19 @@
+/* noto-serif-jp-regular - japanese */
+@font-face {
+	font-family: 'Noto Serif JP';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('../fonts/noto-serif-jp-v8-japanese-regular.woff2') format('woff2'),
+		url('../fonts/noto-serif-jp-v8-japanese-regular.woff') format('woff');
+}
+
+/* noto-serif-jp-700 - japanese */
+@font-face {
+	font-family: 'Noto Serif JP';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+		url('../fonts/noto-serif-jp-v8-japanese-700.woff2') format('woff2'),
+		url('../fonts/noto-serif-jp-v8-japanese-700.woff') format('woff');
+}
