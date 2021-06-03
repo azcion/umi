@@ -79,6 +79,7 @@ async function paintGuideCanvases() {
 	let config = CONFIG.guide_top;
 	let alt = '手描き地図風の地形';
 	p.makeUmiImgs('#guide-top', options, config, alt);
+	await new Promise(r => setTimeout(r, 250));
 
 	config = CONFIG.guide_direction_radial;
 	alt = '手描き地図風の島';
@@ -91,6 +92,7 @@ async function paintGuideCanvases() {
 	config = CONFIG.guide_direction_vertical;
 	alt = 'おそらく島の写真';
 	p.makeUmiImgs('#dir-vertical', options, config, alt);
+	await new Promise(r => setTimeout(r, 150));
 
 	config = CONFIG.guide_noise_octaves;
 	alt = '手描きの地図のスタイルの非常にシンプルな地形';
