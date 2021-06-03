@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import 'guide.grid';
 
 .vert {
@@ -6,7 +7,7 @@
 
 .vert-always {
 	writing-mode: vertical-rl;
-	max-height: ($mobile - 40px) / 2;
+	max-height: math.div($mobile - 40px, 2);
 	margin: 0.5em 0 0;
 }
 
@@ -18,7 +19,7 @@
 
 	.vert,
 	.vert-always {
-		max-height: ($mobile - 40px) / 1.55;
+		max-height: math.div($mobile - 40px, 1.55);
 		font-size: 1.5em;
 	}
 }
