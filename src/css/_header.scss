@@ -18,7 +18,11 @@
 #tagline,
 .large-and-bold {
 	color: $tagline-color;
-	font-weight: 800;
+
+	span {
+		font-weight: 800;
+		font-family: $big-font;
+	}
 }
 
 .center {

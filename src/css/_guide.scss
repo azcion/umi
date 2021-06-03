@@ -11,6 +11,11 @@
 	margin: 0.5em 0 0;
 }
 
+.vert,
+.vert-always {
+	font-family: $p-font;
+}
+
 @media screen /* large screen */ and (min-width: $mobile) {
 	.vert {
 		writing-mode: vertical-rl;

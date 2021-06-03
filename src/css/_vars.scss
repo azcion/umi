@@ -13,4 +13,8 @@ $tablet: 992px;
 $spin-time: 100s;
 $acid-time: 20s;
 
-$nav-font: 'Times New Roman', Times, serif;
+$_font: 'Times New Roman', Times, serif;
+$nav-font: $_font;
+$big-font: $_font;
+$p-font: $_font;
+$footer-font: $_font;
