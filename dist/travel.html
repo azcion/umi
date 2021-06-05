@@ -7,8 +7,8 @@
       name="description"
       content="このサイトは、個人的な興味もありますが、学校の課題として提出するために作りました。"
     />
-    <meta data-page="index" />
-    <title>海 ~ Umi</title>
+    <meta data-page="travel" />
+    <title>海を体験する • 海 ~ Umi</title>
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
@@ -31,21 +31,34 @@
           <p class="text-left"><a href="/gallery">ギャラリー</a></p>
           <p class="text-left"><a href="/guide">使用法</a></p>
           <a class="logo-container screen" href="/"><custom-svg class="logo screen" src="img/logo.svg"></custom-svg></a>
-          <p class="text-right"><a href="/travel">旅行</a></p>
+          <p class="text-right"><a class="nav-here" href="/travel">旅行</a></p>
           <p class="text-right"><a href="https://github.com/azcion/umi">ソースコード</a></p>
         </nav>
         <div class="center">
           <div>
-            <h1 id="tagline"><span>海は探検されるのを待っています</span></h1>
+            <h1 id="tagline"><span>アロハ</span></h1>
           </div>
         </div>
       </header>
       <!-- </header> --><!-- <content> -->
       <main>
-        <div class="full-width">
-          <div class="grid">
-            <div class="item g-one-auto"><canvas class="umi" width="100" height="100"></canvas></div>
+        <div class="fit">
+          <div class="postcard-back">
+            <div class="item left flex">
+              <p class="vert-always">島々からのご挨拶</p>
+              <p class="vert-always">私たちは素晴らしい時間を過ごしています</p>
+            </div>
+            <div class="item right">
+              <div class="stamp"><custom-svg class="overlay" src="img/logo.svg"></custom-svg></div>
+              <div class="lines">
+                <hr />
+                <hr />
+                <hr />
+                <hr />
+              </div>
+            </div>
           </div>
+          <div class="postcard"><canvas class="umi" hidden width="100" height="100"></canvas></div>
         </div>
       </main>
       <!-- </content> --><br />

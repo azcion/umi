@@ -15,6 +15,10 @@
 				"en": "guide",
 				"jp": "使用法"
 			},
+			"travel": {
+				"en": "travel",
+				"jp": "旅行"
+			},
 			"contact": {
 				"en": "contact",
 				"jp": "連絡する"
@@ -112,6 +116,20 @@
 			"side_frequency": {
 				"en": "frequency",
 				"jp": "周波数"
+			}
+		},
+		"travel": {
+			"title": {
+				"en": "experience the sea",
+				"jp": "海を体験する"
+			},
+			"greeting": {
+				"en": "Greetings from the islands",
+				"jp": "島々からのご挨拶"
+			},
+			"card_text": {
+				"en": "We're having a great time!",
+				"jp": "私たちは素晴らしい時間を過ごしています"
 			}
 		}
 	}

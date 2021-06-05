@@ -1,0 +1,108 @@
+.fit {
+	width: fit-content;
+}
+
+.postcard {
+	top: -50px;
+	left: -10px;
+	padding: 4%;
+	position: relative;
+	background-color: #fdefe2;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+	filter: saturate(125%) contrast(85%);
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		display: block;
+		z-index: 1;
+	}
+
+	#branch {
+		transform: rotate(90deg);
+		width: 64px;
+		position: absolute;
+		top: -48px;
+		left: 32px;
+	}
+
+	#sakura {
+		transform: rotate(232deg);
+		width: 64px;
+		position: absolute;
+		top: 88px;
+		left: 205px;
+	}
+}
+
+.postcard:before,
+.postcard:after {
+	content: '';
+	width: 100%;
+	left: 0;
+	position: absolute;
+}
+
+.postcard-back {
+	position: relative;
+	transform: rotate(20deg);
+	top: 10px;
+	left: 50px;
+	background: white;
+	display: flex;
+	height: 128px;
+
+	.flex {
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.item {
+		width: 100%;
+		margin: 10px 0;
+	}
+
+	.left {
+		width: 120%;
+		margin: 15px;
+		border-right: 2px solid black;
+
+		p {
+			color: black;
+			font-size: 0.8em;
+		}
+	}
+
+	.stamp {
+		margin: 0 10px;
+		float: right;
+		width: 35px;
+		height: 40px;
+		background: lightcoral;
+		border: 2px dotted white;
+
+		.overlay svg {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			left: -35px;
+			top: -10px;
+
+			path {
+				opacity: 25%;
+			}
+		}
+	}
+
+	.lines {
+		position: relative;
+		top: 20%;
+		left: 10%;
+		width: 50%;
+
+		hr {
+			width: 70px;
+			margin: 0.65em 0;
+		}
+	}
+}

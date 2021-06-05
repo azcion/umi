@@ -136,6 +136,21 @@ const CONFIG = {
 			frequency: 0.05
 		},
 		gradients: GRADIENTS.oldMap
+	},
+	postcard: {
+		attributes: {
+			radial: true,
+			mass: 60,
+			octaves: 4,
+			frequency: 0.0035
+		},
+		gradients: {
+			colors: [
+				[0, 0, 0],
+				[1, 1, 1]
+			],
+			positions: [0, 1]
+		}
 	}
 };
 

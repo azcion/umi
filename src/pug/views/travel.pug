@@ -1,0 +1,24 @@
+extends ./layouts/default.pug
+
+block vars
+	- pageTitle = lang.travel.title.jp
+	- navLocation = 'travel'
+
+block tagline
+	h1#tagline
+		span アロハ
+
+block content
+	div.fit
+		div.postcard-back
+			div.item.left.flex
+				p.vert-always #{lang.travel.greeting.jp}
+				p.vert-always #{lang.travel.card_text.jp}
+			div.item.right
+				div.stamp
+					custom-svg.overlay(src='img/logo.svg')
+				div.lines
+					- for (let i = 0; i < 4; ++i)
+						hr
+		div.postcard
+			canvas.umi(hidden width='100' height='100')
