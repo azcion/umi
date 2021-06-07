@@ -1,0 +1,62 @@
+.report {
+	color: $text-color;
+
+	h2,
+	h3,
+	p {
+		font-family: $p-font;
+	}
+
+	a {
+		vertical-align: text-bottom;
+		color: $text-color;
+		font-size: 0.85em;
+		text-decoration: none;
+	}
+}
+
+.typewriter {
+	justify-content: center;
+	display: flex;
+
+	h2 {
+		color: $text-color;
+		overflow: hidden;
+		font-family: monospace;
+		border-right: 0.25em solid white;
+		white-space: nowrap;
+		margin: 0 auto;
+		letter-spacing: 0.15em;
+		animation: blink-caret 0.9s step-end 2, sleep 1.5s,
+			typing 1.5s 1.5s steps(6, end),
+			blink-caret 0.9s 3s step-end infinite;
+	}
+}
+
+@keyframes sleep {
+	from,
+	to {
+		width: 0;
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+
+	50% {
+		border-color: white;
+	}
+}

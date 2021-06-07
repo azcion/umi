@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="このサイトは、個人的な興味もありますが、学校の課題として提出するために作りました。"
+    />
+    <meta data-page="report" />
+    <title>プロジェクトレポート • 海 ~ Umi</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png" />
+    <link rel="manifest" href="img/fav/site.webmanifest" />
+    <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="img/fav/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="img/fav/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script defer src="js/script.min.js"></script>
+  </head>
+  <body>
+    <!-- <wrapper> -->
+    <div class="wrapper">
+      <!-- <header> -->
+      <header>
+        <a class="logo-container mobile" title="トップページ" href="/"
+          ><custom-svg class="logo mobile" src="img/logo.svg"></custom-svg
+        ></a>
+        <nav>
+          <p class="text-left"><a title="サンプルギャラリー" href="/gallery">ギャラリー</a></p>
+          <p class="text-left"><a title="ユーザーマニュアル" href="/guide">使用法</a></p>
+          <a class="logo-container screen" title="トップページ" href="/"
+            ><custom-svg class="logo screen" src="img/logo.svg"></custom-svg
+          ></a>
+          <p class="text-right"><a title="海を体験する" href="/travel">旅行</a></p>
+          <p class="text-right"><a class="nav-here" title="プロジェクトレポート" href="/report">レポート</a></p>
+        </nav>
+        <div class="center">
+          <div>
+            <h1 id="tagline"><span>私の目的は何ですか？</span></h1>
+          </div>
+        </div>
+      </header>
+      <!-- </header> --><!-- <content> -->
+      <main>
+        <div class="center typewriter">
+          <a href="https://github.com/azcion/umi" title="ページレポートへのGitHubリンク"><h2>ソースコード</h2></a>
+        </div>
+        <section class="report" lang="sl">
+          <hr />
+          <h2>Osnove</h2>
+          <p>
+            Namen tega projekta je demonstracija različnih primerov uporabe modula noisy-webgl, ki sem ga ustvaril za ta
+            projekt. Sam modul je WebGL priredba mojega prejšnjega modula, noisy-js.
+          </p>
+          <h2>Domena</h2>
+          <p>
+            Spletna stran uporablja ime 海 (umi), ki se prevede kot morje ali ocean. Izbrano je na podlagi izgleda
+            končnega renderja, kjer pri nespremenjenih nastavitvah izgleda kot otočje sredi morja.
+          </p>
+          <p>Ker že imam v lasti domeno azcn.io, sem domeno umi uvrstil kot poddomeno le-te.</p>
+          <h2>Dizajn</h2>
+          <p>
+            Kot prikazni jezik sem izbral japonščino, saj predstavlja državo, ki ima močno povezavo do morja. Izgovor
+            besede ‘umi’ je kratek in vokalno prijeten.
+          </p>
+          <p>
+            Kot logotip sem uporabil kanji simbol 海, ovit v krog v stilu poteze čopiča (ang. brush stroke). Ker je
+            logotip kompleksen, sem za izdelavo favicon-a uporabil le krožni segment.
+          </p>
+          <p>
+            Spletna stran uporablja barvo ozadja, ki je enaka, kot je voda v renderjih prednastavljenih atributov. S tem
+            zagotovim neprekinjen prehod med vsebino renderjev in preostankom spletne strani.
+          </p>
+          <p>
+            Tekstovna vsebina spletne strani uporablja tako horizontalno, kot tudi vertikalno orientacijo, kar je v tem
+            primeru tudi kontekstno relevantno.
+          </p>
+          <p>Model spletne strani sledi naslednji obliki: navigation, tagline, content, footer.</p>
+          <p>
+            Vse podstrani imajo dostop do vseh ostalih podstrani z uporabo navigacijskega segmenta. Povezave se ne
+            pojavljajo izven tega segmenta. Povezave so v smiselnem vrstnem redu, glede na pričakovano uporabo spletne
+            strani - povezave od leve proti desni.
+          </p>
+          <p>
+            Tagline je vrstica, v katero postavim krajši stavek ali frazo, ki v bralcu vzbudi interes do pregleda
+            trenutne podstrani, ali pa mu na kratko predstavi namen oziroma tematiko.
+          </p>
+          <p>
+            Content predstavlja glavni segment vsake podstrani. Znotraj tega je na vsaki strani vsebina drastično
+            drugačna, saj je njen namen strnjena demonstracija različnih primerov uporabe.
+          </p>
+          <p>Na dnu strani se nahaja noga z mojim imenom in copyright podatkom.</p>
+          <hr />
+          <h2>Tehnologije</h2>
+          <p>
+            Za izdelavo HTML-ja sem uporabil Pug. Pug je pogon za predloge, ki se pretvori v HTML markup z uporabo
+            kompilacije z Node.js. Z uporabo le-tega lahko pišem kratko in jedrnato kodo, ki uporablja enake besede kot
+            HTML, skupaj s poljubno uporabo JavaScript-a za programatično generiranje kode.
+          </p>
+          <p>
+            Za JavaScript bi za preprečitev napak praviloma uporabil TypeScript, vendar pri tem projektu to ni bilo
+            potrebno zaradi nizke kompleksnosti vsebin izven Umi objekta, ki je že v osnovi bil napisan v JavaScript-u.
+          </p>
+          <p>
+            Za CSS pravila uporabljam Sass v SCSS obliki. Sass mi omogoča bolj razumljivo strukturo in organizacijo CSS
+            pravil, s čimer si zmanjšam število potencialnih napak.
+          </p>
+          <p>
+            Preprosto združitev vseh treh komponent sem dosegel z uporabo Gulp orodja. Avtomatizacija kompilacije in
+            pretvorbe je z Gulp-om bistveno lažja.
+          </p>
+          <p>
+            Gulp sem konfiguriral, da nadzoruje vse datoteke v predpostavljenih mapah in samodejno zažene primerni
+            postopek, glede na njihovo lokacijo in končnico.
+          </p>
+          <h3>HTML postopek:</h3>
+          <ol>
+            <li>Preberi vsebino datoteke lang.json, ki vsebuje EN-JP prevode vseh tekstovnih vsebin.</li>
+            <li>Vsebino posreduj v Pug modul.</li>
+            <li>Rezultat formatiraj (olepšaj) s Prettier modulom.</li>
+            <li>Formatiran rezultat shrani v /dist/ mapo.</li>
+          </ol>
+          <h3>JS postopek:</h3>
+          <ol>
+            <li>Zaženi modul sourcemaps.</li>
+            <li>Združi vsebine vseh JavaScript datotek.</li>
+            <li>Rezultat formatiraj (ogršaj) s Terser modulom.</li>
+            <li>Ustvari source map datoteko s sourcemaps modulom.</li>
+            <li>Oboje shrani v /dist/ mapo.</li>
+          </ol>
+          <h3>CSS postopek:</h3>
+          <ol>
+            <li>Zaženi modul sourcemaps.</li>
+            <li>Izvedi prevod iz SCSS v CSS s Sass modulom.</li>
+            <li>
+              Dodaj predpone različnih brskalnikov z uporabo precss in autoprefixer modulov znotraj postcss modula.
+            </li>
+            <li>Ustvari source map datoteko s sourcemaps modulom.</li>
+            <li>Oboje shrani v /dist/ mapo.</li>
+          </ol>
+          <p>
+            JS in CSS postopka združita vse datoteke v eno končno datoteko, pri čemer se dodatno ustvari tudi source
+            maps datoteka, ki vzpostavi reference med kompiliranimi in izvornimi datotekami.
+          </p>
+          <hr />
+          <h2>Procedural generation</h2>
+          <p>
+            Vse slikovne vsebine, ki predstavljajo teren, so proceduralno oziroma postopkovno generirane. To pomeni, da
+            je v ozadju algoritem, s katerim na strani klienta v brskalniku zgeneriram vse slike ob zagonu strani. Ker
+            je to generiranje postopek, ki traja dalj časa, je nalaganje strani malenkost počasnejše, glede na
+            uporabnikovo strojno opremo.
+          </p>
+          <p>
+            Najintenzivnejši del generiranja je kreiranje vzorca šuma (ang. noise pattern), ki deluje kot črno-beli
+            zemljevid višine terena (ang. heightmap). Teren je nato pobarvan glede na svetlost piksla, kjer svetlejši
+            piksel pomeni višja točka terena. Barve različnih višin so podane kot seznam barv in njihovih lokacij
+            znotraj 0-1 območja, s čimer jih nato interpretiram kot gradient.
+          </p>
+          <p>
+            Ker je vse to preveč dolgotrajen postopek za CPU, preložim delo na GPU, s čimer dosežem drastično hitrejše
+            izvajanje paralelnih algoritmov, kot je v tem primeru noisy-webgl.
+          </p>
+          <p>
+            Podstran 旅行 uporablja dodatno obdelavo renderja kot pretvorbo v psevdo-3D izgled, ampak je zaradi same
+            časovne omejitve pri izdelavi tega projekta izvedena na procesorju. Iz tega razloga deluje počasneje, vendar
+            sem z uporabo manjših resolucij uspel skrajšati čas procesiranja in nalaganja, saj mora obdelati manjše
+            število podatkov.
+          </p>
+          <p>
+            Spletni brskalniki omejijo število aktivnih WebGL elementov/platen, ker so izredno intenzivni pri porabi
+            računalniških sredstev, zato po zaključku izrisa ene slike na vsakem platnu, celotni element odstranim in ga
+            zamenjam z img elementom, vir katerega je platno, pretvorjeno v image data string.
+          </p>
+          <p>
+            Ker se vse tovrstne slike izrisujejo na uporabnikovi strani, je prenos podatkov pri prehodu med podstranmi
+            minimalen.
+          </p>
+          <h2>Težave</h2>
+          <p>
+            Kot težavo s količino podatkov bi rad izpostavil le pisavo. Ker je vsebina strani prikazana v japonščini, je
+            stilističen izgled simbolov odvisen od operacijskega sistema uporabnika. Vsebina uporablja Times pisavo, kar
+            japonskim simbolom daje zavit videz. Windows operacijski sistemi ne podpirajo tovrstnega izgleda brez
+            dodatno nameščenih pisav, saj Times pisava ni prisotna. Japonski simboli izgledajo natisnjeni pri uporabi
+            Times New Roman.
+          </p>
+          <p>
+            Kot rešitev za poenotenje izgleda sem uporabil pisavo Noto Serif JP, s čimer se je prvi zagon strani dodatno
+            upočasnil zaradi prenosa ogromnih datotek pisav - 4.6 MB le za dve debelini pisave.
+          </p>
+          <p>
+            Dodatno uporabljam tudi klasično verzijo pisave enake družine - Noto Serif, vendar le-ta predstavlja le
+            delež velikosti JP verzije pisave.
+          </p>
+          <hr />
+          <h2>Umi</h2>
+          <p>Celotna stran uporablja naslednji postopek za generiranje vsebine:</p>
+          <ol>
+            <li>Ko se stran naloži, poženi vsebino page.js (GH: /src/js/page.js).</li>
+            <li>Preberi trenutno lokacijo strani in poženi primerne slikarje/gradnike.</li>
+            <li>Prenesi shader datoteke (GH: /glsl/).</li>
+            <li>Podaj nastavitve in atribute za vsak umi/platno v svoj Umi objekt.</li>
+            <li>Izriši eno sličico za vsak umi.</li>
+            <li>Ustvari novo sliko iz podatkov in odstrani umi/platno (ang. canvas).</li>
+            <li>V primeru podstrani 旅行 se te slike nato pretvorijo v psevdo-3D izgled.</li>
+          </ol>
+          <p>Adaptacija noisy-webgl algoritma iz 5. koraka deluje po sledečem postopku:</p>
+          <ol>
+            <li>V konstruktorju sprejmi referenco na platno, skupaj z nastavitvami.</li>
+            <li>Po inicializaciji sprejmi atribute in gradiente.</li>
+            <li>Izvedi validacijo atributov in jih po potrebi pretvori ali zavrži.</li>
+            <li>S procesom prepisovanja vstavi ali prevedi vse atribute in gradiente v shader kodo.</li>
+            <li>Ustvari vertex in fragment shaderja, ter iz tega ustvari WebGL program.</li>
+            <li>Ustvari in prikaže pravokotnik čez celotno vidno polje.</li>
+            <li>Poženi vertex shader.</li>
+            <li>Odstrani program.</li>
+          </ol>
+          <p>Spodaj je opisan postopek delovanja 7. koraka na grafičnem procesorju:</p>
+          <ol>
+            <li>
+              Za vsako koordinato pravokotnika (njegovih trikotnikov), podaj koordinate fragment shaderju in ga poženi.
+            </li>
+            <li>Pretvori koordinato piksla v odstotek znotraj vidnega polja.</li>
+            <li>Določi začetni položaj glede na podane atribute - znižaj globino na straneh, ali v krogu.</li>
+            <li>Uporabi Worley algoritem za celični šum (ang. cellular noise).</li>
+            <li>Uporabi variacijo algoritma, podobnega Simplex algoritmu za naključni šum.</li>
+            <li>Združi rezultate obeh algoritmov.</li>
+            <li>Dodatno obdelaj rezultat, glede na podane atribute.</li>
+            <li>Obarvaj rezultat, glede na svetlost, z uporabo podanega gradienta.</li>
+          </ol>
+          <p>Opis 7. koraka iz prvotnega seznama, pri čemer zgoraj opisani rezultat pretvorim v psevdo-3D je sledeč:</p>
+          <ol>
+            <li>Podaj vsebino rezultata renderja v novo platno, tokrat le 2D namesto WebGL.</li>
+            <li>Za uporabo tega algoritma se uporabi črno-beli gradient renderja.</li>
+            <li>Program teče na CPU-ju, zato uporabi manjšo resolucijo.</li>
+            <li>Preberi in shrani vsako n vrstico slike, v mojem primeru vsako 16. vrstico.</li>
+            <li>Uporabi 1D Gaussian blur na vsaki vrstici, za manj hrapavo površino.</li>
+            <li>Izriši vertikalno črto iz višine svetlosti piksla v vrstici.</li>
+            <li>Začetna in končna višina sta odvisni od globine (vrstnega reda) vrstice.</li>
+            <li>Barva piksla znotraj črte je odvisna od njegove relativne višine.</li>
+          </ol>
+          <hr />
+          <h2>SEO</h2>
+          <p>
+            Search Engine Optimization danes deluje povsem drugače, kot je včasih. Nekoč zlata pravila, kot so uporaba
+            keywords metapodatkov ali podobnih optimizacij niso več veljavna. Google uporablja kriterije, kot so varnost
+            in dostopnost strani, hitrost njenega nalaganja, mobilna dostopnost, starost domene, vsebina besedila domene
+            in besedila URL-jev, optimizacija vsebine, ključne besede v naslovih, uporabniška izkušnja, povezave,
+            signali družabnih omrežij ter podatki o podjetju, ko je to primerno.
+          </p>
+          <p>
+            Bolj je pomembna optimizacija uporabniške izkušnje, kot tehnična optimizacija za iskalnike. Googlov AI
+            algoritem RankBrain uporablja vsebinske signale, kot so splošna relevanca vsebine in relevanca vsebine v
+            lokalnem območju, število besed, ključne besede v body segmentu, v opisu, naslovu in H1 elementih; in
+            uporabniške signale, kot so “click-through rate”, kar predstavlja delež ljudi, ki dejansko pritisne na
+            povezavo do strani v rezultatih iskanja, “bounce rate”, kar je število ljudi, ki se po obisku strani hitro
+            vrnejo nazaj na rezultate iskanja, ter “dwell time”, kar predstavlja čas, ki ga uporabniki preživijo na
+            strani po tem, ko jo obiščejo.
+          </p>
+          <h2>Copyright</h2>
+          <p>
+            Za licenco tega projekta sem izbral MIT licenco, s čimer drugim omogočam skoraj povsem prosto izbiro uporabe
+            kode ali njenih segmentov za distribuiranje in spreminjanje tako odprto- kot tudi zaprto-kodnih derivacij.
+            To omogoča uporabo tega projekta pri komercialnih produktih, kot tudi za zasebne ali druge primere. Ta
+            licenca me razvezuje od garancije in škode, nastale z uporabo produkta.
+          </p>
+          <p>
+            Tovrstno dopustno licenco sem uporabil, ker stran ne predpostavlja morebitnega lastništva projekta, temveč
+            predstavlja orodje, ki naj ne bi bilo omejeno za uporabo v drugih projektih in integracijah.
+          </p>
+          <h2>Dodatne funkcionalnosti</h2>
+          <p>
+            Zaradi časovne omejitve mi ni uspelo pripraviti nekaterih funkcionalnosti, kot so sprememba jezika strani,
+            ustvarjalec gradientov, upravljanje in spreminjanje atributov, GPU izris psevdo-3D pretvorb, dvojni izris
+            (črno-beli height map + barvni render), umi animacija, ter mnogo drugih.
+          </p>
+          <h2>Viri</h2>
+          <p>
+            Noisy-JS 「
+            <a href="https://github.com/azcion/noisy-js/blob/main/js/page.js"
+              >noisy-js/page.js at main · azcion/noisy-js (github.com)</a
+            >
+            」
+          </p>
+          <p>
+            Noisy-WebGL 「
+            <a href="https://github.com/azcion/noisy-webgl/blob/main/js/webgl.js"
+              >noisy-webgl/webgl.js at main · azcion/noisy-webgl (github.com)</a
+            >
+            」
+          </p>
+          <p>
+            Worley 「
+            <a href="https://github.com/ashima/webgl-noise/blob/master/src/cellular2D.glsl"
+              >webgl-noise/cellular2D.glsl at master · ashima/webgl-noise (github.com)</a
+            >
+            」
+          </p>
+          <p>
+            Simplex 「
+            <a href="https://github.com/ashima/webgl-noise/blob/master/src/noise2D.glsl"
+              >webgl-noise/noise2D.glsl at master · ashima/webgl-noise (github.com)</a
+            >
+            」
+          </p>
+        </section>
+      </main>
+      <!-- </content> --><br />
+      <footer><small>&copy;&nbsp;2021&nbsp;·&nbsp;Zak&nbsp;Klajderic</small></footer>
+    </div>
+    <!-- </wrapper> -->
+  </body>
+</html>

@@ -139,6 +139,24 @@
 				"en": "We're having a great time!",
 				"jp": "私たちは素晴らしい時間を過ごしています"
 			}
+		},
+		"report": {
+			"title": {
+				"en": "Project report",
+				"jp": "プロジェクトレポート"
+			},
+			"tagline": {
+				"en": "What is my purpose?",
+				"jp": "私の目的は何ですか？"
+			},
+			"source": {
+				"en": "source code",
+				"jp": "ソースコード"
+			},
+			"link_title": {
+				"en": "GitHub link to page report",
+				"jp": "ページレポートへのGitHubリンク"
+			}
 		}
 	}
 }

@@ -1,0 +1,131 @@
+h2 Osnove
+p Namen tega projekta je demonstracija različnih primerov uporabe modula noisy-webgl, ki sem ga ustvaril za ta projekt. Sam modul je WebGL priredba mojega prejšnjega modula, noisy-js.
+
+h2 Domena
+p Spletna stran uporablja ime 海 (umi), ki se prevede kot morje ali ocean. Izbrano je na podlagi izgleda končnega renderja, kjer pri nespremenjenih nastavitvah izgleda kot otočje sredi morja.
+p Ker že imam v lasti domeno azcn.io, sem domeno umi uvrstil kot poddomeno le-te.
+
+h2 Dizajn
+p Kot prikazni jezik sem izbral japonščino, saj predstavlja državo, ki ima močno povezavo do morja. Izgovor besede ‘umi’ je kratek in vokalno prijeten.
+p Kot logotip sem uporabil kanji simbol 海, ovit v krog v stilu poteze čopiča (ang. brush stroke). Ker je logotip kompleksen, sem za izdelavo favicon-a uporabil le krožni segment.
+p Spletna stran uporablja barvo ozadja, ki je enaka, kot je voda v renderjih prednastavljenih atributov. S tem zagotovim neprekinjen prehod med vsebino renderjev in preostankom spletne strani.
+p Tekstovna vsebina spletne strani uporablja tako horizontalno, kot tudi vertikalno orientacijo, kar je v tem primeru tudi kontekstno relevantno.
+p Model spletne strani sledi naslednji obliki: navigation, tagline, content, footer.
+p Vse podstrani imajo dostop do vseh ostalih podstrani z uporabo navigacijskega segmenta. Povezave se ne pojavljajo izven tega segmenta. Povezave so v smiselnem vrstnem redu, glede na pričakovano uporabo spletne strani - povezave od leve proti desni.
+p Tagline je vrstica, v katero postavim krajši stavek ali frazo, ki v bralcu vzbudi interes do pregleda trenutne podstrani, ali pa mu na kratko predstavi namen oziroma tematiko.
+p Content predstavlja glavni segment vsake podstrani. Znotraj tega je na vsaki strani vsebina drastično drugačna, saj je njen namen strnjena demonstracija različnih primerov uporabe. 
+p Na dnu strani se nahaja noga z mojim imenom in copyright podatkom.
+
+hr
+
+h2 Tehnologije
+p Za izdelavo HTML-ja sem uporabil Pug. Pug je pogon za predloge, ki se pretvori v HTML markup z uporabo kompilacije z Node.js. Z uporabo le-tega lahko pišem kratko in jedrnato kodo, ki uporablja enake besede kot HTML, skupaj s poljubno uporabo JavaScript-a za programatično generiranje kode.
+p Za JavaScript bi za preprečitev napak praviloma uporabil TypeScript, vendar pri tem projektu to ni bilo potrebno zaradi nizke kompleksnosti vsebin izven Umi objekta, ki je že v osnovi bil napisan v JavaScript-u.
+p Za CSS pravila uporabljam Sass v SCSS obliki. Sass mi omogoča bolj razumljivo strukturo in organizacijo CSS pravil, s čimer si zmanjšam število potencialnih napak.
+p Preprosto združitev vseh treh komponent sem dosegel z uporabo Gulp orodja. Avtomatizacija kompilacije in pretvorbe je z Gulp-om bistveno lažja.
+p Gulp sem konfiguriral, da nadzoruje vse datoteke v predpostavljenih mapah in samodejno zažene primerni postopek, glede na njihovo lokacijo in končnico. 
+
+h3 HTML postopek:
+ol
+	li Preberi vsebino datoteke lang.json, ki vsebuje EN-JP prevode vseh tekstovnih vsebin.
+	li Vsebino posreduj v Pug modul.
+	li Rezultat formatiraj (olepšaj) s Prettier modulom.
+	li Formatiran rezultat shrani v /dist/ mapo.
+
+h3 JS postopek:
+ol
+	li Zaženi modul sourcemaps.
+	li Združi vsebine vseh JavaScript datotek.
+	li Rezultat formatiraj (ogršaj) s Terser modulom.
+	li Ustvari source map datoteko s sourcemaps modulom.
+	li Oboje shrani v /dist/ mapo.
+
+h3 CSS postopek:
+ol
+	li Zaženi modul sourcemaps.
+	li Izvedi prevod iz SCSS v CSS s Sass modulom.
+	li Dodaj predpone različnih brskalnikov z uporabo precss in autoprefixer modulov znotraj postcss modula.
+	li Ustvari source map datoteko s sourcemaps modulom.
+	li Oboje shrani v /dist/ mapo.
+
+p JS in CSS postopka združita vse datoteke v eno končno datoteko, pri čemer se dodatno ustvari tudi source maps datoteka, ki vzpostavi reference med kompiliranimi in izvornimi datotekami.
+
+hr
+
+h2 Procedural generation
+p Vse slikovne vsebine, ki predstavljajo teren, so proceduralno oziroma postopkovno generirane. To pomeni, da je v ozadju algoritem, s katerim na strani klienta v brskalniku zgeneriram vse slike ob zagonu strani. Ker je to generiranje postopek, ki traja dalj časa, je nalaganje strani malenkost počasnejše, glede na uporabnikovo strojno opremo.
+p Najintenzivnejši del generiranja je kreiranje vzorca šuma (ang. noise pattern), ki deluje kot črno-beli zemljevid višine terena (ang. heightmap). Teren je nato pobarvan glede na svetlost piksla, kjer svetlejši piksel pomeni višja točka terena. Barve različnih višin so podane kot seznam barv in njihovih lokacij znotraj 0-1 območja, s čimer jih nato interpretiram kot gradient.
+p Ker je vse to preveč dolgotrajen postopek za CPU, preložim delo na GPU, s čimer dosežem drastično hitrejše izvajanje paralelnih algoritmov, kot je v tem primeru noisy-webgl.
+p Podstran 旅行 uporablja dodatno obdelavo renderja kot pretvorbo v psevdo-3D izgled, ampak je zaradi same časovne omejitve pri izdelavi tega projekta izvedena na procesorju. Iz tega razloga deluje počasneje, vendar sem z uporabo manjših resolucij uspel skrajšati čas procesiranja in nalaganja, saj mora obdelati manjše število podatkov.
+p Spletni brskalniki omejijo število aktivnih WebGL elementov/platen, ker so izredno intenzivni pri porabi računalniških sredstev, zato po zaključku izrisa ene slike na vsakem platnu, celotni element odstranim in ga zamenjam z img elementom, vir katerega je platno, pretvorjeno v image data string.
+p Ker se vse tovrstne slike izrisujejo na uporabnikovi strani, je prenos podatkov pri prehodu med podstranmi minimalen.
+
+h2 Težave
+p Kot težavo s količino podatkov bi rad izpostavil le pisavo. Ker je vsebina strani prikazana v japonščini, je stilističen izgled simbolov odvisen od operacijskega sistema uporabnika. Vsebina uporablja Times pisavo, kar japonskim simbolom daje zavit videz. Windows operacijski sistemi ne podpirajo tovrstnega izgleda brez dodatno nameščenih pisav, saj Times pisava ni prisotna. Japonski simboli izgledajo natisnjeni pri uporabi Times New Roman. 
+p Kot rešitev za poenotenje izgleda sem uporabil pisavo Noto Serif JP, s čimer se je prvi zagon strani dodatno upočasnil zaradi prenosa ogromnih datotek pisav - 4.6 MB le za dve debelini pisave.
+p Dodatno uporabljam tudi klasično verzijo pisave enake družine - Noto Serif, vendar le-ta predstavlja le delež velikosti JP verzije pisave.
+
+hr
+
+h2 Umi
+p Celotna stran uporablja naslednji postopek za generiranje vsebine:
+ol
+	li Ko se stran naloži, poženi vsebino page.js (GH: /src/js/page.js).
+	li Preberi trenutno lokacijo strani in poženi primerne slikarje/gradnike.
+	li Prenesi shader datoteke (GH: /glsl/).
+	li Podaj nastavitve in atribute za vsak umi/platno v svoj Umi objekt.
+	li Izriši eno sličico za vsak umi.
+	li Ustvari novo sliko iz podatkov in odstrani umi/platno (ang. canvas).
+	li V primeru podstrani 旅行 se te slike nato pretvorijo v psevdo-3D izgled.
+
+p Adaptacija noisy-webgl algoritma iz 5. koraka deluje po sledečem postopku:
+ol
+	li V konstruktorju sprejmi referenco na platno, skupaj z nastavitvami.
+	li Po inicializaciji sprejmi atribute in gradiente.
+	li Izvedi validacijo atributov in jih po potrebi pretvori ali zavrži.
+	li S procesom prepisovanja vstavi ali prevedi vse atribute in gradiente v shader kodo.
+	li Ustvari vertex in fragment shaderja, ter iz tega ustvari WebGL program.
+	li Ustvari in prikaže pravokotnik čez celotno vidno polje.
+	li Poženi vertex shader.
+	li Odstrani program.
+
+p Spodaj je opisan postopek delovanja 7. koraka na grafičnem procesorju:
+ol
+	li Za vsako koordinato pravokotnika (njegovih trikotnikov), podaj koordinate fragment shaderju in ga poženi.
+	li Pretvori koordinato piksla v odstotek znotraj vidnega polja.
+	li Določi začetni položaj glede na podane atribute - znižaj globino na straneh, ali v krogu.
+	li Uporabi Worley algoritem za celični šum (ang. cellular noise).
+	li Uporabi variacijo algoritma, podobnega Simplex algoritmu za naključni šum.
+	li Združi rezultate obeh algoritmov.
+	li Dodatno obdelaj rezultat, glede na podane atribute.
+	li Obarvaj rezultat, glede na svetlost, z uporabo podanega gradienta.
+
+p Opis 7. koraka iz prvotnega seznama, pri čemer zgoraj opisani rezultat pretvorim v psevdo-3D je sledeč:
+ol
+	li Podaj vsebino rezultata renderja v novo platno, tokrat le 2D namesto WebGL.
+	li Za uporabo tega algoritma se uporabi črno-beli gradient renderja.
+	li Program teče na CPU-ju, zato uporabi manjšo resolucijo.
+	li Preberi in shrani vsako n vrstico slike, v mojem primeru vsako 16. vrstico.
+	li Uporabi 1D Gaussian blur na vsaki vrstici, za manj hrapavo površino.
+	li Izriši vertikalno črto iz višine svetlosti piksla v vrstici.
+	li Začetna in končna višina sta odvisni od globine (vrstnega reda) vrstice.
+	li Barva piksla znotraj črte je odvisna od njegove relativne višine.
+
+hr
+
+h2 SEO
+p Search Engine Optimization danes deluje povsem drugače, kot je včasih. Nekoč zlata pravila, kot so uporaba keywords metapodatkov ali podobnih optimizacij niso več veljavna. Google uporablja kriterije, kot so varnost in dostopnost strani, hitrost njenega nalaganja, mobilna dostopnost, starost domene, vsebina besedila domene in besedila URL-jev, optimizacija vsebine, ključne besede v naslovih, uporabniška izkušnja, povezave, signali družabnih omrežij ter podatki o podjetju, ko je to primerno.
+p Bolj je pomembna optimizacija uporabniške izkušnje, kot tehnična optimizacija za iskalnike. Googlov AI algoritem RankBrain uporablja vsebinske signale, kot so splošna relevanca vsebine in relevanca vsebine v lokalnem območju, število besed, ključne besede v body segmentu, v opisu, naslovu in H1 elementih; in uporabniške signale, kot so “click-through rate”, kar predstavlja delež ljudi, ki dejansko pritisne na povezavo do strani v rezultatih iskanja, “bounce rate”, kar je število ljudi, ki se po obisku strani hitro vrnejo nazaj na rezultate iskanja, ter “dwell time”, kar predstavlja čas, ki ga uporabniki preživijo na strani po tem, ko jo obiščejo.
+
+h2 Copyright
+p Za licenco tega projekta sem izbral MIT licenco, s čimer drugim omogočam skoraj povsem prosto izbiro uporabe kode ali njenih segmentov za distribuiranje in spreminjanje tako odprto- kot tudi zaprto-kodnih derivacij. To omogoča uporabo tega projekta pri komercialnih produktih, kot tudi za zasebne ali druge primere. Ta licenca me razvezuje od garancije in škode, nastale z uporabo produkta.
+p Tovrstno dopustno licenco sem uporabil, ker stran ne predpostavlja morebitnega lastništva projekta, temveč predstavlja orodje, ki naj ne bi bilo omejeno za uporabo v drugih projektih in integracijah.
+
+h2 Dodatne funkcionalnosti
+p Zaradi časovne omejitve mi ni uspelo pripraviti nekaterih funkcionalnosti, kot so sprememba jezika strani, ustvarjalec gradientov, upravljanje in spreminjanje atributov, GPU izris psevdo-3D pretvorb, dvojni izris (črno-beli height map + barvni render), umi animacija, ter mnogo drugih.
+
+h2 Viri
+p Noisy-JS 「 <a href="https://github.com/azcion/noisy-js/blob/main/js/page.js">noisy-js/page.js at main · azcion/noisy-js (github.com)</a> 」
+p Noisy-WebGL 「 <a href="https://github.com/azcion/noisy-webgl/blob/main/js/webgl.js">noisy-webgl/webgl.js at main · azcion/noisy-webgl (github.com)</a> 」
+p Worley 「 <a href="https://github.com/ashima/webgl-noise/blob/master/src/cellular2D.glsl">webgl-noise/cellular2D.glsl at master · ashima/webgl-noise (github.com)</a> 」
+p Simplex 「 <a href="https://github.com/ashima/webgl-noise/blob/master/src/noise2D.glsl">webgl-noise/noise2D.glsl at master · ashima/webgl-noise (github.com)</a> 」

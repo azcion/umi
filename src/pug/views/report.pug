@@ -1,0 +1,17 @@
+extends ./layouts/default.pug
+
+block vars
+	- pageTitle = lang.report.title.jp
+	- navLocation = 'report'
+
+block tagline
+	h1#tagline
+		span #{lang.report.tagline.jp}
+
+block content
+	div.center.typewriter
+		a(href="https://github.com/azcion/umi" title=lang.report.link_title.jp)
+			h2 #{lang.report.source.jp}
+	section.report(lang="sl")
+		hr
+		include ./partials/reportdoc.pug
