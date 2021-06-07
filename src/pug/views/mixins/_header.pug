@@ -1,19 +1,23 @@
 - const root = '/'
 
 mixin logo(platform)
-	a(class=`logo-container ${platform}` href=root)
+	a(
+		title=lang.header.home.jp
+		class=`logo-container ${platform}`
+		href=root)
 		custom-svg.logo(class=platform src='img/logo.svg')
 
-mixin pal(text, file)
-	p.text-left
-		a(
-			href=root+file
-			class= navLocation == file ? 'nav-here' : ''
-		) #{text}
+mixin a(loc)
+	a(
+		title=`${lang[loc].title.jp}`
+		href= root+loc
+		class= navLocation == loc ? 'nav-here' : ''
+	) #{lang.header[loc].jp}
 
-mixin par(text, file, link)
+mixin pal(loc)
+	p.text-left
+		+a(loc)
+
+mixin par(loc)
 	p.text-right
-		a(
-			href=link || root+file
-			class= navLocation == file ? 'nav-here' : ''
-		) #{text}
+		+a(loc)

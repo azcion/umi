@@ -7,6 +7,10 @@
 			}
 		},
 		"header": {
+			"home": {
+				"en": "home",
+				"jp": "トップページ"
+			},
 			"gallery": {
 				"en": "gallery",
 				"jp": "ギャラリー"
@@ -19,13 +23,13 @@
 				"en": "travel",
 				"jp": "旅行"
 			},
+			"report": {
+				"en": "report",
+				"jp": "レポート"
+			},
 			"contact": {
 				"en": "contact",
 				"jp": "連絡する"
-			},
-			"github": {
-				"en": "source code",
-				"jp": "ソースコード"
 			}
 		},
 		"index": {
