@@ -30,17 +30,17 @@
 		},
 		"index": {
 			"tagline": {
-				"en": "the sea is waiting to be explored",
+				"en": "The sea is waiting to be explored",
 				"jp": "海は探検されるのを待っています"
 			}
 		},
 		"gallery": {
 			"title": {
-				"en": "example gallery",
+				"en": "Example Gallery",
 				"jp": "サンプルギャラリー"
 			},
 			"tagline": {
-				"en": "adventure time",
+				"en": "Adventure time",
 				"jp": "冒険の時間"
 			},
 			"end": {
@@ -50,11 +50,11 @@
 		},
 		"guide": {
 			"title": {
-				"en": "user manual",
+				"en": "User Manual",
 				"jp": "ユーザーマニュアル"
 			},
 			"tagline": {
-				"en": "let's go on a voyage",
+				"en": "Let's go on a voyage",
 				"jp": "航海に出よう"
 			},
 			"top": {
@@ -120,7 +120,7 @@
 		},
 		"travel": {
 			"title": {
-				"en": "experience the sea",
+				"en": "Experience the sea",
 				"jp": "海を体験する"
 			},
 			"tagline": {
