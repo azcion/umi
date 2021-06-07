@@ -10,12 +10,9 @@ $footer-color: $_text;
 $mobile: 768px;
 $tablet: 992px;
 
-$spin-time: 100s;
-$acid-time: 20s;
+$_font: 'Noto Serif JP', 'Noto Serif', 'Times New Roman', Times, serif;
 
-$_font: 'Noto Serif JP', serif;
-$_font2: 'Times New Roman', Times, serif;
 $nav-font: $_font;
 $big-font: $_font;
 $p-font: $_font;
-$footer-font: $_font2;
+$footer-font: $_font;
