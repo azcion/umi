@@ -55,6 +55,15 @@
 		overflow: hidden;
 		grid-template-columns: 1fr;
 
+		&.full-width-mobile {
+			width: 100vw;
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
+		}
+
 		.first-special {
 			margin: 40px 10% 0 0;
 		}
