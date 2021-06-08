@@ -32,12 +32,12 @@
 		grid-template-columns: 1fr 1fr;
 
 		.one-up {
-			transform: translate(-6.8em, -8em) !important;
+			transform: translate(-220px, -280px) !important;
 		}
 
 		.g-text p {
 			position: absolute;
-			transform: translateX(5.5em);
+			transform: translateX(180px);
 			font-size: 2em;
 		}
 
@@ -66,12 +66,12 @@
 		grid-template-columns: 1fr;
 
 		.one-up {
-			transform: translate(5.2em, -8em) !important;
+			transform: translate(180px, -250px) !important;
 		}
 
 		.g-text p {
 			position: absolute;
-			transform: translateX(1em);
+			transform: translateX(20px);
 			font-size: 2em;
 		}
 
