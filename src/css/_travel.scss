@@ -52,8 +52,12 @@
 
 @media screen /* small screen */ and (max-width: vars.$mobile - 1) {
 	.travel {
-		overflow-x: clip;
+		overflow: hidden;
 		grid-template-columns: 1fr;
+
+		.first-special {
+			margin: 40px 10% 0 0;
+		}
 
 		.margin-when-small {
 			margin-top: 10%;
