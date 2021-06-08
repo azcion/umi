@@ -46,23 +46,65 @@
       </header>
       <!-- </header> --><!-- <content> -->
       <main>
-        <div class="fit">
-          <div class="postcard-back">
-            <div class="item left flex">
-              <p class="vert-always">島々からのご挨拶</p>
-              <p class="vert-always">私たちは素晴らしい時間を過ごしています</p>
-            </div>
-            <div class="item right">
-              <div class="stamp"><custom-svg class="overlay" src="img/logo.svg"></custom-svg></div>
-              <div class="lines">
-                <hr />
-                <hr />
-                <hr />
-                <hr />
+        <div class="grid travel">
+          <div class="item g-tall-auto fit" hidden>
+            <div class="postcard-back">
+              <div class="item left flex">
+                <p class="vert-always">島々からのご挨拶</p>
+                <p class="vert-always">私たちは素晴らしい時間を過ごしています</p>
+              </div>
+              <div class="item right">
+                <div class="stamp"><custom-svg class="overlay" src="img/logo.svg"></custom-svg></div>
+                <div class="lines">
+                  <hr />
+                  <hr />
+                  <hr />
+                  <hr />
+                </div>
               </div>
             </div>
+            <div class="postcard"><canvas class="umi" id="postcard" hidden width="100" height="100"></canvas></div>
           </div>
-          <div class="postcard"><canvas class="umi" hidden width="100" height="100"></canvas></div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto arrow arrow-ul" id="skip-1-arrow" hidden>
+            <custom-svg src="img/arrow.svg" alt="矢印"></custom-svg>
+          </div>
+          <div class="item empty"></div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto margin-when-small" hidden>
+            <div class="postcard no-position">
+              <canvas class="umi" id="skip-1" hidden width="100" height="100"></canvas>
+            </div>
+          </div>
+          <div class="item g-tall-auto arrow arrow-ur" id="skip-2-arrow" hidden>
+            <custom-svg src="img/arrow.svg" alt="矢印"></custom-svg>
+          </div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto margin-when-small" hidden>
+            <div class="postcard no-position">
+              <canvas class="umi" id="skip-2" hidden width="100" height="100"></canvas>
+            </div>
+          </div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto arrow arrow-ul" id="skip-3-arrow" hidden>
+            <custom-svg src="img/arrow.svg" alt="矢印"></custom-svg>
+          </div>
+          <div class="item empty"></div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto margin-when-small" hidden>
+            <div class="postcard no-position">
+              <canvas class="umi" id="skip-3" hidden width="100" height="100"></canvas>
+            </div>
+          </div>
+          <div class="item g-tall-auto arrow arrow-dl" id="special-3d-skip-arrow" hidden>
+            <custom-svg src="img/arrow.svg" alt="矢印"></custom-svg>
+          </div>
+          <div class="item empty"></div>
+          <div class="item g-tall-auto margin-when-small" hidden>
+            <div class="postcard no-position">
+              <canvas class="umi" id="special-3d-skip" hidden width="100" height="100"></canvas>
+            </div>
+          </div>
         </div>
       </main>
       <!-- </content> --><br />

@@ -1,0 +1,87 @@
+@use 'vars';
+
+.no-position {
+	position: unset;
+}
+
+.travel {
+	.item {
+		width: 256px;
+		height: 128px;
+	}
+
+	.g-tall-auto {
+		height: 256px;
+	}
+
+	.arrow svg {
+		animation: fadeIn 200ms ease-in-out;
+		height: 256px;
+		width: 256px;
+
+		path {
+			fill: $arrow-color;
+		}
+	}
+}
+
+@media screen /* large screen */ and (min-width: vars.$mobile) {
+	.travel {
+		margin: auto;
+		max-width: 70%;
+		grid-template-columns: 1fr 1fr;
+
+		.arrow {
+			z-index: -1;
+
+			&.arrow-ul {
+				position: relative;
+				transform: translate(0, 0) rotate(45deg);
+			}
+
+			&.arrow-ur {
+				transform: scaleX(-1) translate(0, 0) rotate(45deg);
+			}
+
+			&.arrow-dl {
+				transform: translate(30px, -25px) rotate(-78deg);
+			}
+		}
+	}
+}
+
+@media screen /* small screen */ and (max-width: vars.$mobile - 1) {
+	.travel {
+		grid-template-columns: 1fr;
+
+		.margin-when-small {
+			margin-top: 10%;
+			height: 256px - 64;
+		}
+
+		.arrow-dl {
+			margin-top: 135px;
+		}
+
+		.empty {
+			height: 0 !important;
+		}
+
+		.arrow {
+			z-index: -1;
+
+			&.arrow-ul {
+				position: relative;
+				transform: translate(100px, 0) rotate(70deg);
+			}
+
+			&.arrow-ur {
+				transform: scaleX(-1) translate(100px, 0) rotate(70deg);
+			}
+
+			&.arrow-dl {
+				transform: translate(-110px, 0) rotate(-110deg);
+			}
+		}
+	}
+}

@@ -138,6 +138,10 @@
 			"card_text": {
 				"en": "We're having a great time!",
 				"jp": "私たちは素晴らしい時間を過ごしています"
+			},
+			"arrow": {
+				"en": "An arrow",
+				"jp": "矢印"
 			}
 		},
 		"report": {
