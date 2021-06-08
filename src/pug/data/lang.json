@@ -2,8 +2,8 @@
 	"lang": {
 		"head": {
 			"description": {
-				"en": "This website was created in part out of personal interest, but also to be submitted as a school project.",
-				"jp": "このサイトは、個人的な興味もありますが、学校の課題として提出するために作りました。"
+				"en": "Landmass generation using WebGL, by coloring various noises with lots of showcases of basic usage and some pseudo-3D post-processing examples. This is a school project.",
+				"jp": "WebGLを使って、ノイズに色をつけてランドマスを生成します。基本的な使い方のショーケースと、擬似的な3D後処理の例がたくさんあります。これは学校のプロジェクトです。"
 			}
 		},
 		"header": {
