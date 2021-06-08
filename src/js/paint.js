@@ -43,6 +43,7 @@ const Paint = class {
 			img.onload = () => {
 				img.parentNode.parentNode.hidden = false;
 				document.querySelector(selector + '-arrow').hidden = false;
+				document.querySelector(selector + '-text').hidden = false;
 			};
 
 			return;
@@ -59,6 +60,7 @@ const Paint = class {
 
 			if (!selector.includes('postcard')) {
 				document.querySelector(selector + '-arrow').hidden = false;
+				document.querySelector(selector + '-text').hidden = false;
 			}
 
 			Paint.construct(img, ctx, selector);

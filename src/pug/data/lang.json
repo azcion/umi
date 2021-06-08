@@ -142,6 +142,22 @@
 			"arrow": {
 				"en": "An arrow",
 				"jp": "矢印"
+			},
+			"style": {
+				"en": "In style!",
+				"jp": "スタイルで!"
+			},
+			"color": {
+				"en": "In color!",
+				"jp": "カラーで!"
+			},
+			"height": {
+				"en": "Bright = Height",
+				"jp": "ブライト＝高さ"
+			},
+			"pseudo": {
+				"en": "Pseudo-3D!",
+				"jp": "疑似3D!"
 			}
 		},
 		"report": {

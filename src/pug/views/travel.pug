@@ -26,7 +26,8 @@ block content
 			div.postcard
 				canvas.umi#postcard(hidden width='100' height='100')
 		
-		div.item.empty
+		div.item.empty.g-text#skip-1-text(hidden)
+			p.vert-always #{lang.travel.style.jp}
 
 		div.item.g-tall-auto.arrow.arrow-ul#skip-1-arrow(hidden)
 			custom-svg(src=arrow alt=alt)
@@ -42,13 +43,15 @@ block content
 		div.item.g-tall-auto.arrow.arrow-ur#skip-2-arrow(hidden)
 			custom-svg(src=arrow alt=alt)
 
-		div.item.empty
+		div.item.empty.g-text#skip-2-text(hidden)
+			p.vert-always.one-up #{lang.travel.color.jp}
 
 		div.item.g-tall-auto.margin-when-small(hidden)
 			div.postcard.no-position
 				canvas.umi#skip-2(hidden width='100' height='100')
 
-		div.item.empty
+		div.item.empty.g-text#skip-3-text(hidden)
+			p.vert-always #{lang.travel.height.jp}
 
 		div.item.g-tall-auto.arrow.arrow-ul#skip-3-arrow(hidden)
 			custom-svg(src=arrow alt=alt)
@@ -64,7 +67,8 @@ block content
 		div.item.g-tall-auto.arrow.arrow-dl#special-3d-skip-arrow(hidden)
 			custom-svg(src=arrow alt=alt)
 		
-		div.item.empty
+		div.item.empty.g-text#special-3d-skip-text(hidden)
+			p.vert-always.one-up #{lang.travel.pseudo.jp}
 
 		div.item.g-tall-auto.margin-when-small(hidden)
 			div.postcard.no-position
