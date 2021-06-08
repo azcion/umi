@@ -122,9 +122,22 @@ async function paintTravelCanvases() {
 	await Umi.loadShaders('glsl/');
 
 	const p = new Paint(256, 100);
+	const sleep = 750;
 
 	let options = {};
 	let config = CONFIG.postcard;
 	let alt = '島々の絵葉書';
-	p.makeUmiCanvas('.umi', options, config, alt);
+	p.makeUmiCanvas('#postcard', options, config, alt);
+	await new Promise(r => setTimeout(r, sleep));
+	alt = 'レイヤードアイランドのレンダリング';
+	p.makeUmiCanvas('#skip-1', options, config, alt);
+	await new Promise(r => setTimeout(r, sleep));
+	alt = '色を使わないレイヤード・アイランド・レンダリング';
+	p.makeUmiCanvas('#skip-2', options, config, alt);
+	await new Promise(r => setTimeout(r, sleep));
+	alt = 'ノイズレンダリング';
+	p.makeUmiCanvas('#skip-3', options, config, alt);
+	await new Promise(r => setTimeout(r, sleep));
+	alt = '3Dアイランドレンダリング';
+	p.makeUmiCanvas('#special-3d-skip', options, config, alt);
 }
